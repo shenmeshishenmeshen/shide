@@ -1,0 +1,164 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.htmlBody {
+    height: 650px;
+    width: 100%;
+    background-image: url(img/w2.jpg);
+    background-attachment: fixed;
+}
+.head{
+	width:100%;
+	height:30px;
+	margin:0;
+	border:1px solid #CECBCE;
+	background-color:#E5CBB4;}
+.head i{
+	color:#FF4400 !important;}
+
+.daoHang{
+	}
+.danHang ul,li{
+	margin:0;
+	padding:0;
+	list-style:none;
+    }
+.danHang a{
+	color:#83674D ;
+	text-decoration:none;}
+.danHang a:hover{
+	color:#F30;
+	text-decoration:underline;
+	}
+.danHang li{
+		font-size:14px;
+	    float:left;
+		font-family:"宋体";
+		padding-top:5px;}
+.home{
+	margin-left:150px;
+	height:20px;
+	width:60px;
+	margin-top:5px;
+	}
+.danHang-center{
+	width:90px;
+	height:20px;
+	margin-left:60px;
+	margin-top:5px;
+	background:url(img/border3.gif) no-repeat 75px;
+	}
+.danHang-center2{
+	width:90px;
+	height:20px;
+	margin-top:5px;
+	background:url(img/border3.gif) no-repeat 75px;
+	}
+.danHang-center3{
+	width:90px;
+	height:20px;
+	margin-top:5px;
+	}
+.myCar{
+	height:20px;
+	width:100px;
+	margin-left:350px;
+	margin-top:5px;
+	}
+.myCar a{
+	color:#FF8040 !important;}
+.login{
+	margin-left:50px;
+	height:20px;
+	width:50px;
+	margin-top:3px;
+   text-align:center;
+	background:url(img/border3.gif) no-repeat 45px ;}
+.register{
+	height:20px;
+	width:60px;
+	margin-top:3px;
+	margin-left:7px;}
+.left{
+	height:650px;
+	width:40%;
+	float:left;
+	}
+.left-pic{
+	height:250px;
+	width:250px;
+	margin-top:90px;
+	margin-left:150px;
+	}
+.left-information{
+	height:300px;
+	width:400px;
+	margin-left:150px;
+	}
+
+.right{
+	width:800px;
+	height:650px;
+	float:right;
+	}
+.right1{
+	height:450px;
+	width:800px;
+	border:1px solid #000;}
+.right-pic{
+	height:250px;
+	width:250px;
+	border:1px solid #000;
+	margin-top:100px;
+	margin-left:50px;
+	float:left;
+	}
+.right-pic btn2{
+	margin-right:5px;
+	margin-bottom:3px;}
+.yinCang{
+	height:80px;
+	width:400px;
+	margin-top:5px;
+	/*display:none;*/}
+.right-suggest{
+	height:200px;
+	width:450px;
+	margin-top:150px;
+	background:url(img/border.png) no-repeat;
+	float:right;
+    }
+.right-2{
+	width:800px;
+	}
+.thanks{
+	float:left;
+	width:400px;
+	height:100px;
+	margin-left:30px;
+	margin-top:10px;
+	color:#FF8040;
+	font-weight:bold;
+	font-size:24px;
+	font-family:"宋体";
+	background:url(img/smile.jpg) no-repeat 280px;
+	display:none;
+	} 
+/*.btn{
+	float:right;}*/
+.right-suggest form{
+	padding-left:20px;
+	padding-top:25px;}
+.btn{
+	margin-top:60px;
+	margin-left:500px;}
+.right-2 input{
+	color:#FFF;
+	background-color:#BD0000;
+	width:200px;
+	height:50px;}
+
+.clear{
+	clear:both;}
+
+	
+

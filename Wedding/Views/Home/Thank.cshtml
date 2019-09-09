@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+
+var time=5;
+var	timer=setInterval('tiaozhuan()',1000);
+
+function tiaozhuan(){
+var t= document.getElementById("id8");
+if(time>0){
+t.innerHTML=time;
+time--;
+}else {
+clearInterval(timer);
+location.href="index.html";
+}
+}
+
+    </script>
+</head>
+<body>
+    <div class="inside">
+        十分感谢您的建议，<br>
+        我们会努力提供更好的使用感。
+    </div>
+    <div class="footer">
+        <font id="id8" size="7">5</font>秒钟自动跳转网站首页<a href="index">或点击我直接跳转</a>
+    </div>
+    <style>
+        .inside {
+            width: 800px;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 150px;
+            margin-left: 250px;
+            background-color: #FF9C39;
+        }
+
+        .footer {
+            margin-left: 50%;
+            padding-top: 50px;
+        }
+    </style>
+</body>

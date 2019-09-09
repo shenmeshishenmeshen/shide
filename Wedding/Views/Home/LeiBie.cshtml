@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Wedding.Models.LeiBie>
+<li><h2><a href="@Url.Action("LISTHE","ShangPing19man",new { })"><img width="40px" height="40px" src="~/fonts/图标.png"/ >所有鲜花</a></h2></li>
+@foreach (var item in Model)
+{
+    <li><h2><a href="@Url.Action("List","ShangPing19man",new { id=item.LeiBieId})"><img width="40px" height="35px" src="~/fonts/图标.png"/ >@item.Name</a></h2></li>
+}

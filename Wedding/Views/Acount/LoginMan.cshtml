@@ -1,0 +1,66 @@
+﻿@model Wedding.Models.Member
+
+@{
+    Layout = null;
+}
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<div class="wrap">
+   <p>管理员登陆</p>
+    <div class="main">
+        @using (Html.BeginForm("LoginMan", "Acount", FormMethod.Post, new { name = "LoginMan", onsubmit = "return checkform();" }))
+    {
+        <div class="content">
+            <div class="login_box">
+                <div class="login_l"><img src="~/fonts/login_left.gif" width="462" height="355"></div>
+                <div class="login_r">
+                    <div class="login_form">
+                        <div>
+                            <span>用户名</span>
+                            <div class="item-ifo">
+                                @Html.TextBoxFor(Model => Model.ManrName, new { @class = "sang_Calender" })
+                                @Html.ValidationMessageFor(Model => Model.ManrName)
+                                <div class="i-name ico"></div>
+                                <label id="loginname_succeed" class="red"></label>
+                            </div>
+                        </div>
+                        <div>
+                            <span>密码</span>
+                            <div class="item-ifo">
+                                @Html.PasswordFor(Model => Model.ManPwd, new { @class = "sang_Calender" })
+                                @Html.ValidationMessageFor(Model => Model.ManPwd)
+                                @*<div class="i-password ico"></div>
+                                <label id="loginpwd_succeed" class="red"></label>
+                                <label id="loginpwd_error" class="hide"></label>*@
+                            </div>
+                        </div>
+                        <div class="clear">
+                            <div style="height:30px"></div>
+                            <input class="regBtn" type="submit" value="登录" />
+
+                        </div>
+                        @*<div class="mt50">
+                            <input id="loginsubmit" class="btn-entry" type="button" clstag="passport|keycount|login|06" tabindex="8" value="登录">
+                        </div>*@
+
+                    </div>
+
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="copy_right">
+                <p>Flowers Sales 2019</p>
+            </div>
+        </div>@Html.AntiForgeryToken()
+}
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<link href="~/Content/style.css" rel="stylesheet" />
+<link href="~/Content/BTN.css" rel="stylesheet" />

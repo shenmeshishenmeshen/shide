@@ -1,0 +1,51 @@
+﻿@model Wedding.Models.ShangPin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>详情</h2>
+
+<div>
+    <h4>商品</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            类别：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeiBie.Name)
+        </dd>
+
+        <dt>
+            介绍：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            价格：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            图片及路径：
+        </dt>
+
+        <dd>
+            <img src="@Model.TuPian" style="width:100px;height:100px">
+            @Html.DisplayFor(model => model.TuPian)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("编辑", "Edit", new { id = Model.ShangPinId }) |
+    @Html.ActionLink("返回", "Index")
+</p>

@@ -1,0 +1,167 @@
+﻿@model Wedding.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+            $("#GL_StandardCode").click(function () {
+                var newSrc = "@Url.Action("GetImg", "Acount")" + "?t=" + (new Date()).getTime();
+                this.src = newSrc;
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<div class="wrap">
+    <div class="header">
+
+        <div class="header_top">
+            <div class="account_desc">
+                <ul>
+                    <li><a href="#">你好，欢迎来到花儿与绿叶！</a></li>
+                    @if (Session["UserName"] != null)
+                    {
+                        string Username = Convert.ToString(Session["UserName"]);
+                        <li>
+                            <a href="@Url.Action("UserDetail","Acount",new {id = Username  })">@Username</a>
+
+                        </li>
+                        <li> @Html.ActionLink("注销", "UserZhuXiao", "Acount", new { }, new { })</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("欢迎登录", "Login", "Acount", new { }, new { })</li>
+                        <li>@Html.ActionLink("注册", "Reg", "Acount", new { }, new { })</li>
+                    }
+                </ul>
+            </div>
+          
+            <div class="clear"></div>
+        </div>
+
+        <div class="header_bottom">
+            <div class="menu">
+                <ul style="margin-left:43%">
+                    <li>@Html.ActionLink("主 页", "Index", "Home")</li>
+                    <li>@Html.ActionLink("最新商品", "NewProd", "Home")</li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+    <div class="main">
+
+        <div class="content">
+
+            <div class="reg_box">
+                <div class="reg_step">
+                    @using (Html.BeginForm())
+                    {
+                        @*<form action="" method="post" id="step1_frm">*@
+                        <div class="frm_control_group">
+                            <label class="frm_label"><span class="red">*</span> 用户名</label>
+
+                            <div class="frm_controls">
+                                <div class="item-ifo">
+                                    @Html.AntiForgeryToken()
+                                    @Html.TextBoxFor(Model => Model.UserName, new { @class = "frm_input user", id = "UserName" })
+                                    @Html.ValidationMessageFor(Model => Model.UserName)
+                                    <div id="errInfo1" class="txtform">
+                                    </div>
+
+                                </div>
+                                <span class="frm_tips">6-20位英文和数字</span>
+                            </div>
+                        </div>
+                        <div class="frm_control_group">
+                            <label class="frm_label"><span class="red">*</span> 请设置密码：</label>
+                            <div class="frm_controls">
+                                <div class="item-ifo">
+                                    @Html.PasswordFor(Model => Model.UserPwd, new { @class = "frm_input", @id = "Pwd" })
+                                    @Html.ValidationMessageFor(Model => Model.UserPwd)
+                                    <div id="errInfo2" class="txtform">
+                                    </div>
+                                </div>
+                                <span class="frm_tips">6-16位英文、数字组合</span>
+                            </div>
+                        </div>
+                        <div class="frm_control_group">
+                            <label class="frm_label"><span class="red">*</span> 请确认密码：</label>
+                            <div class="frm_controls">
+                                <div class="item-ifo">
+                                    @*<div class="txtform">*@
+                                    <input type="password" id="txtPwd" class="frm_input">
+                                    @*</div>
+                                        <input type="password" id='Pwd2' class="frm_input">*@
+                                    <label id="lpass2"></label>
+                                    <div id="errInfo" class="txtform">
+                                    </div>
+                                </div>
+                                <span class="frm_tips">请再次输入密码</span>
+                            </div>
+                        </div>
+                        <div class="frm_control_group">
+                            <label class="frm_label"><span class="red">*</span> 邮箱</label>
+                            <div class="frm_controls">
+                                <div class="item-ifo">
+                                    @Html.TextBoxFor(Model => Model.Email, new { @class = "frm_input", @id = "youxiang" })
+                                    @Html.ValidationMessageFor(Model => Model.Email)
+                                    <div id="errInfo3" class="txtform">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frm_control_group">
+                            <label class="frm_label"><span class="red">*</span> 性别</label>
+                            <div class="frm_controls">
+                                <div class="item-ifo">
+                                    @Html.DropDownList("Sex", null, htmlAttributes: new { @class = "frm_input" })
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="frm_control_group">
+                            <label class="frm_label"><span class="red">*</span> 验证码</label>
+                            <div class="frm_controls verifycode">
+                                @Html.TextBox("coDE",null,new {@class= "frm_input verifyCode",@id= "txtcode", @maxlength = "4" })@*<input ID="txtcode" CssClass="code" runat="server" type="text" name="" class="frm_input verifyCode" maxlength="4" />*@
+                                <a href="javascript:;">
+                                    <img id="GL_StandardCode" style="cursor: pointer;" src="@Url.Action("GetImg", "Acount")?t=@DateTime.Now.Ticks" title="看不清，点击换一张" />
+</a></div>
+                        </div>
+                        <div>
+                            <input class="regBtn" id="btn" type="submit" value="注册" onClick="return validateData()" />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="copy_right">
+        <p>Copyright &copy; 2018.Wedding.</p>
+    </div>
+</div>
+<script src="~/Scripts/validation.js"></script>
+<script src="~/Scripts/datetime.js"></script>
+<link href="~/Content/style.css" rel="stylesheet" />
+<link href="~/Content/BTN.css" rel="stylesheet" />
+
+
+
+
+

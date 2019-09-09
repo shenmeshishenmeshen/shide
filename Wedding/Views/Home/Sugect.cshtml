@@ -1,0 +1,70 @@
+﻿@{ 
+    Layout = null;
+}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Content/suggest.css" rel="stylesheet" />
+    <title>登录页面建议调查</title>
+</head>
+<body>
+    <div class="first">
+        <h1><img src="~/Content/img/2.jpg" />登录页满意度调查</h1>
+        <p class="line">   </p>
+    </div>
+    <div class="second">
+        <div class="tips">
+            hi,亲爱的客人<br>
+            恭喜你呀，祝你们恩恩爱爱，意笃情深。<br>
+            为了您更愉快的体验，任何对登录页面的建议都可以在本页回馈!
+        </div>
+        <div class="third">
+            <div class="s1">
+                <p>对于页面的满意程度（可多选） </p>
+                <form id="form1" name="form1" method="post" action="">
+                    <p>
+                        <input type="checkbox" name="checkbox" id="checkbox" />
+                        登录快捷
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checkbox1" id="checkbox" />
+                        界面美观
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checkbox2" id="checkbox" />
+                        链接有帮助
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checkbox3" id="checkbox" />
+                        不喜欢
+                    </p>
+                    <p>
+                        <input type="checkbox" name="checkbox4" id="checkbox2" />
+                        其他
+                    </p>
+                    <p>
+                        <input type="text" name="textfield" id="textfield" class="input1" placeholder="可随意填写自己满意的部分" />
+                    </p>
+                </form>
+
+            </div>
+            <div class="s2">
+                <p>您对登录界面有什想法？（哪里做的不够好？对于页面设计我有更好的想法 等等） </p>
+                <form id="form3" name="form3" method="post" action="">
+                    <label for="textarea3"></label>
+                    <textarea name="textarea3" id="textarea3" cols="85" rows="6"></textarea>
+                </form>
+                <p>&nbsp;</p>
+            </div>
+            <div class="s3">
+                <p>请填写您的联系方式，以便我们与您联系</p>
+                <input type="text" name="textfield2" id="textfield2" class="input1" />
+                <a href="~/Home/Thank">
+                    <input type="submit" name="button" id="button" value="提交" class="btn" />
+                </a>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+        <div class="line">
+        </div>
+    </div>
+</body>

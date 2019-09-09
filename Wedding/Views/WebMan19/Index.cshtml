@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Wedding.Models.ShangPin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>主页</h2>
+
+<p>
+    @Html.ActionLink("添加", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th width="100px">
+           类别名
+        </th>
+        <th>
+           介绍
+        </th>
+        <th>
+           单价
+        </th>
+        <th>
+            图片及路径
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeiBie.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            <img src="@item.TuPian" style="width:100px;height:100px">
+            @Html.DisplayFor(modelItem => item.TuPian)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new { id=item.ShangPinId }) |
+            @Html.ActionLink("详情", "Details", new { id=item.ShangPinId }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.ShangPinId })
+        </td>
+    </tr>
+}
+
+</table>

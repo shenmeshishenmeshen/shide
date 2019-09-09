@@ -1,0 +1,188 @@
+﻿@model IEnumerable<Wedding.Models.User>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/BTN.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.2.min.js"></script>
+</head>
+
+<div class="wrap">
+    <div class="header">
+
+        <div class="header_top">
+            <div class="account_desc">
+                <ul>
+                    <li><a href="#">你好，欢迎来到花儿与绿叶！</a></li>
+                    @if (Session["UserName"] != null)
+                    {
+                        string Username = Convert.ToString(Session["UserName"]);
+                        <li>
+                            <a href="@Url.Action("UserDetail","Acount",new {id = Username  })">@Username</a>
+
+                        </li>
+                        <li> @Html.ActionLink("注销", "UserZhuXiao", "Acount", new { }, new { })</li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("欢迎登录", "Login", "Acount", new { }, new { })</li>
+                        <li>@Html.ActionLink("注册", "Reg", "Acount", new { }, new { })</li>
+                    }
+                </ul>
+            </div>
+          
+            <script type="text/javascript">
+                function DropDown(el) {
+                    this.dd = el;
+                    this.initEvents();
+                }
+                DropDown.prototype = {
+                    initEvents: function () {
+                        var obj = this;
+
+                        obj.dd.on('click', function (event) {
+                            $(this).toggleClass('active');
+                            event.stopPropagation();
+                        });
+                    }
+                }
+
+                $(function () {
+
+                    var dd = new DropDown($('#dd'));
+
+                    $(document).click(function () {
+                        // all dropdowns
+                        $('.wrapper-dropdown-2').removeClass('active');
+                    });
+
+                });
+
+            </script>
+            <div class="clear"></div>
+        </div>
+        <uc1:Menu runat="server" ID="Menu" />
+        <div class="header_bottom">
+            <div class="menu">
+                <ul style="margin-left:43%">
+                    <li>@Html.ActionLink("主 页", "Index", "Home")</li>
+                    <li>@Html.ActionLink("最新商品", "NewProd", "Home")</li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+    <div style="height:60px"></div>
+
+    <div class="tb-item-info tb-clear">
+        <div class="tb-item-info-l" style="width:420px;height:548.2px;float:left;padding-left:150px">
+
+            <div style="width:200px;float:left"></div>
+            <div class="tb-item-info-r" data-spm="iteminfo" style="width:518px;height:548px;float:left;padding-left:400px">
+                @foreach (var item in Model)
+                {
+
+                    <h2>
+                        <span>
+                            用户名: @item.UserName
+                        </span>
+                    </h2>
+
+
+                    <div id="J_Banner" class="tb-banner" style="height:50px"></div>
+                    <div>
+                        <h2>
+                            <span>注册时间:@item.RegTime</span>
+                        </h2>
+                    </div>
+
+
+                    <div id="J_Banner" style="height:50px"></div>
+
+                    <div>
+
+
+                        <h2>
+                            <span>性别:@item.Sex</span>
+                        </h2>
+
+                    </div>
+
+
+                    <div id="" style="height:50px"></div>
+                    <div>
+                        <h2>
+                            <span>邮箱:@item.Email</span>
+                        </h2>
+                    </div>
+
+                    <div id="" style="height:50px"></div>
+                    <div>
+                        <h2>
+                            <span>您是第:@item.UserID 号用户</span>
+                        </h2>
+                    </div>
+
+
+                    <div id="" style="height:30px"></div>
+                    @*<dl id="J_DlChoice" class="tb-choice tb-clear">
+                            <dt>请选择：暂时无其他色号</dt>
+                            <div id="" style="height:30px"></div>
+                            <em>颜色分类：</em>
+                        </dl>*@
+
+
+
+                }
+
+
+
+                <div class="tb-btn-add" style="float:left;padding-bottom:10px;padding-right:10px">
+
+                    @Html.ActionLink("注销", "UserZhuXiao", "Acount", new { })
+                    @*<input class="regBtn" type="submit" value="修改信息" />*@
+
+                </div>
+
+                <div c style="float:left;width:120px;height:40px;padding-left:30px">
+
+
+                    @Html.ActionLink("返回<<", "Index", "Home")
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="clear"></div>
+<div class="footer">
+    <div class="copy_right">
+        <p>Copyright &copy; 2014.Company name All rights reserved.</p>
+    </div>
+</div>
+
+
+
+

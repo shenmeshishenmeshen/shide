@@ -1,0 +1,72 @@
+﻿@charset "utf-8";
+.regBtn {
+    width: 110px;
+    height: 35px;
+    color: #fff;
+    font-family: Microsoft Yahei; /*微软雅黑字体*/
+    font-size: 14px;
+    letter-spacing: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #08c;
+    /*背景阴影渐变特效*/
+    background: linear-gradient(top, "#08c 5%, #039 100%"); /*通用浏览器*/
+    background: -webkit-linear-gradient(top, "#08c 5%, #039 100%"); /*新webkit浏览器*/
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #08c), color-stop(100%, #039)); /*旧版本webkit浏览器*/
+    background: -ms-linear-gradient(top, "#08c 5%, #039 100%"); /*微软浏览器 ie11+*/
+    background: -o-linear-gradient(top, "#08c 5%, #039 100%"); /*opera*/
+    background: -moz-linear-gradient(top, "#08c 5%, #039 100%"); /*firefox浏览器*/
+}
+/*鼠标移入高亮特效*/
+    .regBtn:HOVER {
+        background-color: #09F;
+        /*背景阴影渐变特效*/
+        background: linear-gradient(top, "#09f 5%, #039 100%"); /*通用浏览器*/
+        background: -webkit-linear-gradient(top, "#09f 5%, #039 100%"); /*新webkit浏览器*/
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #09f), color-stop(100%, #039)); /*旧版本webkit浏览器*/
+        background: -ms-linear-gradient(top, "#09f 5%, #039 100%"); /*微软浏览器 ie11+*/
+        background: -o-linear-gradient(top, "#09f 5%, #039 100%"); /*opera*/
+        background: -moz-linear-gradient(top, "#09f 5%, #039 100%"); /*firefox浏览器*/
+        cursor: pointer;
+    }
+/*鼠标点击效果*/
+    .regBtn:ACTIVE {
+        background-color: #000;
+        /*背景阴影渐变特效*/
+        background: linear-gradient(top, "#039 5%, #08c 100%"); /*通用浏览器*/
+        background: -webkit-linear-gradient(top, "#08c 5%, #039 100%"); /*新webkit浏览器*/
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #039), color-stop(100%, #08c)); /*旧版本webkit浏览器*/
+        background: -ms-linear-gradient(top, "#039 5%, #08c 100%"); /*微软浏览器 ie11+*/
+        background: -o-linear-gradient(top, "#039 5%, #08c 100%"); /*opera*/
+        background: -moz-linear-gradient(top, "#039 5%, #08c 100%"); /*firefox浏览器*/
+    }
+.sang_Calender {
+    width: 300px;
+    outline: 0 none;
+    border: 1px solid #C5C5C5;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06) inset;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06) inset;
+    padding: 0 10px;
+}
+/*.form-control {
+    width: 300px;
+    outline: 0 none;
+    border: 1px solid #C5C5C5;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06) inset;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06) inset;
+    padding: 0 10px;
+}*/
+
+

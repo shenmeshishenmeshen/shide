@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C49E2FB-5A05-4E7E-A358-428C4D6C4BA6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wedding</RootNamespace>
+    <AssemblyName>Wedding</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\3.jpg" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\BTN.css" />
+    <Content Include="Content\css\fa-brands.css" />
+    <Content Include="Content\css\fa-brands.min.css" />
+    <Content Include="Content\css\fa-regular.css" />
+    <Content Include="Content\css\fa-regular.min.css" />
+    <Content Include="Content\css\fa-solid.css" />
+    <Content Include="Content\css\fa-solid.min.css" />
+    <Content Include="Content\css\fontawesome-all.css" />
+    <Content Include="Content\css\fontawesome-all.min.css" />
+    <Content Include="Content\css\fontawesome.css" />
+    <Content Include="Content\css\fontawesome.min.css" />
+    <Content Include="Content\img\2.jpg" />
+    <Content Include="Content\img\20179957_113230199452_2.png" />
+    <Content Include="Content\img\adress.png" />
+    <Content Include="Content\img\border.png" />
+    <Content Include="Content\img\buy.png" />
+    <Content Include="Content\img\form.png" />
+    <Content Include="Content\img\g1.png" />
+    <Content Include="Content\img\w2.jpg" />
+    <Content Include="Content\order-2.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\remark.css" />
+    <Content Include="Content\Site\1.jpg" />
+    <Content Include="Content\Site\10.jpg" />
+    <Content Include="Content\Site\11.jpg" />
+    <Content Include="Content\Site\12.jpg" />
+    <Content Include="Content\Site\13.jpg" />
+    <Content Include="Content\Site\14.jpg" />
+    <Content Include="Content\Site\15.jpg" />
+    <Content Include="Content\Site\16.jpg" />
+    <Content Include="Content\Site\17.jpg" />
+    <Content Include="Content\Site\18.jpg" />
+    <Content Include="Content\Site\19.jpg" />
+    <Content Include="Content\Site\2.jpg" />
+    <Content Include="Content\Site\20.jpg" />
+    <Content Include="Content\Site\21.jpg" />
+    <Content Include="Content\Site\22.jpg" />
+    <Content Include="Content\Site\23.jpg" />
+    <Content Include="Content\Site\24.jpg" />
+    <Content Include="Content\Site\25.jpg" />
+    <Content Include="Content\Site\26.jpg" />
+    <Content Include="Content\Site\27.jpg" />
+    <Content Include="Content\Site\28.jpg" />
+    <Content Include="Content\Site\29.jpg" />
+    <Content Include="Content\Site\3.jpg" />
+    <Content Include="Content\Site\30.jpg" />
+    <Content Include="Content\Site\31.jpg" />
+    <Content Include="Content\Site\32.jpg" />
+    <Content Include="Content\Site\33.jpg" />
+    <Content Include="Content\Site\34.jpg" />
+    <Content Include="Content\Site\35.jpg" />
+    <Content Include="Content\Site\4.jpg" />
+    <Content Include="Content\Site\5.jpeg" />
+    <Content Include="Content\Site\6.jpg" />
+    <Content Include="Content\Site\7.jpg" />
+    <Content Include="Content\Site\8.jpg" />
+    <Content Include="Content\Site\9.jpg" />
+    <Content Include="Content\HunCheImages\1.png" />
+    <Content Include="Content\HunCheImages\10.png" />
+    <Content Include="Content\HunCheImages\11.png" />
+    <Content Include="Content\HunCheImages\12.png" />
+    <Content Include="Content\HunCheImages\2.png" />
+    <Content Include="Content\HunCheImages\3.png" />
+    <Content Include="Content\HunCheImages\4.png" />
+    <Content Include="Content\HunCheImages\5.png" />
+    <Content Include="Content\HunCheImages\6.png" />
+    <Content Include="Content\HunCheImages\7.png" />
+    <Content Include="Content\HunCheImages\8.png" />
+    <Content Include="Content\HunCheImages\9.png" />
+    <Content Include="Content\Hunsha\1.jpg" />
+    <Content Include="Content\Hunsha\10.jpg" />
+    <Content Include="Content\Hunsha\11.jpg" />
+    <Content Include="Content\Hunsha\12.jpg" />
+    <Content Include="Content\Hunsha\13.jpg" />
+    <Content Include="Content\Hunsha\14.jpg" />
+    <Content Include="Content\Hunsha\15.jpg" />
+    <Content Include="Content\Hunsha\16.jpg" />
+    <Content Include="Content\Hunsha\17.jpg" />
+    <Content Include="Content\Hunsha\18.jpg" />
+    <Content Include="Content\Hunsha\19.jpg" />
+    <Content Include="Content\Hunsha\2.jpg" />
+    <Content Include="Content\Hunsha\20.jpg" />
+    <Content Include="Content\Hunsha\21.jpg" />
+    <Content Include="Content\Hunsha\22.jpg" />
+    <Content Include="Content\Hunsha\23.jpg" />
+    <Content Include="Content\Hunsha\24.jpg" />
+    <Content Include="Content\Hunsha\25.jpg" />
+    <Content Include="Content\Hunsha\26.jpg" />
+    <Content Include="Content\Hunsha\27.jpg" />
+    <Content Include="Content\Hunsha\28.jpg" />
+    <Content Include="Content\Hunsha\29.jpg" />
+    <Content Include="Content\Hunsha\3.jpg" />
+    <Content Include="Content\Hunsha\30.jpg" />
+    <Content Include="Content\Hunsha\31.jpg" />
+    <Content Include="Content\Hunsha\32.jpg" />
+    <Content Include="Content\Hunsha\33.jpg" />
+    <Content Include="Content\Hunsha\4.jpg" />
+    <Content Include="Content\Hunsha\5.1.jpg" />
+    <Content Include="Content\Hunsha\5.jpg" />
+    <Content Include="Content\Hunsha\6.jpg" />
+    <Content Include="Content\Hunsha\7.jpg" />
+    <Content Include="Content\Hunsha\8.jpg" />
+    <Content Include="Content\Hunsha\9.jpg" />
+    <Content Include="Content\NewImages\1.jpg" />
+    <Content Include="Content\NewImages\10.jpg" />
+    <Content Include="Content\NewImages\11.jpg" />
+    <Content Include="Content\NewImages\12.jpg" />
+    <Content Include="Content\NewImages\13.jpg" />
+    <Content Include="Content\NewImages\14.jpg" />
+    <Content Include="Content\NewImages\15.jpg" />
+    <Content Include="Content\NewImages\2.jpg" />
+    <Content Include="Content\NewImages\3.jpg" />
+    <Content Include="Content\NewImages\5.jpg" />
+    <Content Include="Content\NewImages\6.jpg" />
+    <Content Include="Content\NewImages\7.jpg" />
+    <Content Include="Content\NewImages\9.jpg" />
+    <Content Include="Content\PingJiaImages\1.jpg" />
+    <Content Include="Content\PingJiaImages\15.jpg" />
+    <Content Include="Content\PingJiaImages\2.jpg" />
+    <Content Include="Content\PingJiaImages\3.jpg" />
+    <Content Include="Content\PingJiaImages\5.jpg" />
+    <Content Include="Content\SiYiImages\2.jpg" />
+    <Content Include="Content\SiYiImages\7.jpg" />
+    <Content Include="Content\SiYiImages\8.jpg" />
+    <Content Include="Content\SiYiImages\易烊千玺.jpg" />
+    <Content Include="Content\SiYiImages\5.jpg" />
+    <Content Include="Content\SiYiImages\6.jpg" />
+    <Content Include="Content\SiYiImages\9.jpg" />
+    <Content Include="Content\SiYiImages\特洛耶·希文.jpg" />
+    <Content Include="Content\SiYiImages\1.jpg" />
+    <Content Include="Content\SiYiImages\4.jpg" />
+    <Content Include="Content\SiYiImages\3.jpg" />
+    <Content Include="Content\SiYiImages\魏大勋.jpg" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\suggest.css" />
+    <Content Include="Content\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\Xizhuang\1.jpg" />
+    <Content Include="Content\Xizhuang\10.jpg" />
+    <Content Include="Content\Xizhuang\11.jpg" />
+    <Content Include="Content\Xizhuang\12.jpg" />
+    <Content Include="Content\Xizhuang\13.jpg" />
+    <Content Include="Content\Xizhuang\14.jpg" />
+    <Content Include="Content\Xizhuang\15.jpg" />
+    <Content Include="Content\Xizhuang\16.jpg" />
+    <Content Include="Content\Xizhuang\17.jpg" />
+    <Content Include="Content\Xizhuang\18.jpg" />
+    <Content Include="Content\Xizhuang\19.jpg" />
+    <Content Include="Content\Xizhuang\2.jpg" />
+    <Content Include="Content\Xizhuang\20.jpg" />
+    <Content Include="Content\Xizhuang\21.jpg" />
+    <Content Include="Content\Xizhuang\22.jpg" />
+    <Content Include="Content\Xizhuang\23.jpg" />
+    <Content Include="Content\Xizhuang\24.jpg" />
+    <Content Include="Content\Xizhuang\25.jpg" />
+    <Content Include="Content\Xizhuang\26.jpg" />
+    <Content Include="Content\Xizhuang\27.jpg" />
+    <Content Include="Content\Xizhuang\28.jpg" />
+    <Content Include="Content\Xizhuang\29.jpg" />
+    <Content Include="Content\Xizhuang\3.jpg" />
+    <Content Include="Content\Xizhuang\30.jpg" />
+    <Content Include="Content\Xizhuang\31.jpg" />
+    <Content Include="Content\Xizhuang\32.jpg" />
+    <Content Include="Content\Xizhuang\4.jpg" />
+    <Content Include="Content\Xizhuang\5.jpg" />
+    <Content Include="Content\Xizhuang\6.jpg" />
+    <Content Include="Content\Xizhuang\7.jpg" />
+    <Content Include="Content\Xizhuang\8.jpg" />
+    <Content Include="Content\Xizhuang\9.jpg" />
+    <Content Include="Content\图片1.png" />
+    <Content Include="Content\头像.jpg" />
+    <Content Include="Content\特洛耶·希文.jpg" />
+    <Content Include="fonts\29.jpg" />
+    <Content Include="fonts\713efe21fbebae1158ced124199ded18.png" />
+    <Content Include="fonts\dribbble.png" />
+    <Content Include="fonts\facebook.png" />
+    <Content Include="fonts\LOGE.png" />
+    <Content Include="fonts\login_left.gif" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\search.png" />
+    <Content Include="fonts\图标.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\datetime.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Content\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\webfonts\fa-solid-900.woff2" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MYscript.js" />
+    <Content Include="Scripts\Validate.form.js" />
+    <Content Include="Scripts\Validate.js" />
+    <Content Include="Scripts\validation.js" />
+    <Content Include="Views\Acount\Login.cshtml" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Views\Acount\Reg.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Home\Xzhu.cshtml" />
+    <Content Include="Views\Home\Hunche.cshtml" />
+    <Content Include="Views\Acount\UserDetail.cshtml" />
+    <Content Include="Views\Acount\LoginMan.cshtml" />
+    <Content Include="Views\Home\XiangQing.cshtml" />
+    <Content Include="Views\Home\Serch.cshtml" />
+    <Content Include="Views\Home\LeiBie.cshtml" />
+    <Content Include="Views\Home\Changdi.cshtml" />
+    <Content Include="Views\CheckOut\AddToOrd.cshtml" />
+    <Content Include="Views\Home\LUNbo.cshtml" />
+    <Content Include="Views\WebMan19\Index.cshtml" />
+    <Content Include="Views\WebMan19\Edit.cshtml" />
+    <Content Include="Views\WebMan19\Details.cshtml" />
+    <Content Include="Views\WebMan19\Create.cshtml" />
+    <Content Include="Views\WebMan19\Delete.cshtml" />
+    <Content Include="Views\Home\NewProd.cshtml" />
+    <Content Include="Views\UseMan19\Index.cshtml" />
+    <Content Include="Views\UseMan19\Edit.cshtml" />
+    <Content Include="Views\UseMan19\Details.cshtml" />
+    <Content Include="Views\UseMan19\Create.cshtml" />
+    <Content Include="Views\UseMan19\Delete.cshtml" />
+    <Content Include="Views\Home\LiJiGouMai.cshtml" />
+    <Content Include="Views\Acount\EditUserImfor.cshtml" />
+    <Content Include="Views\Acount\EditUserImforagen.cshtml" />
+    <Content Include="Views\WebMan19\SevView.cshtml" />
+    <Content Include="Views\Home\HomeSevView.cshtml" />
+    <Content Include="Views\Home\Thank.cshtml" />
+    <Content Include="Views\Home\Sugect.cshtml" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\MyJS.js" />
+    <Content Include="Scripts\slides.min.jquery.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AcountController.cs" />
+    <Compile Include="Controllers\CheckOutController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShangPing19manController.cs" />
+    <Compile Include="Controllers\UseMan19Controller.cs" />
+    <Compile Include="Controllers\WebMan19Controller.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LeiBie.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\SampleData.cs" />
+    <Compile Include="Models\ShangPin.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Validationid.cs" />
+    <Compile Include="Models\WeddingEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\ShangPinIma\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52867</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52867/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

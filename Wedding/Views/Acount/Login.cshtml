@@ -1,0 +1,163 @@
+﻿@model Wedding.Models.User
+
+@{
+    Layout = null;
+}
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script type="text/javascript">
+    $(function () {
+        var timer = null;
+        var pageHeight = document.documentElement.clientHeight;    //获取可视区域的高度
+        window.onscroll = function () {        //onscroll 事件在元素滚动时执行
+            var backtop = $(document).scrollTop();
+            //获取滚动条滚动的垂直距离
+            if (backtop >= 900) {
+                $('#dtop').show();
+                $('#searcht').show();
+                //若滚动条滚动的垂直距离大于180px,则显示“回到顶部”链接,否则隐藏
+            } else {
+                $("#dtop").hide();
+                $("#searcht").hide();
+            }
+        }
+        $(function () {
+            $("#dtop").click(function () {
+                $("html,body").animate({ scrollTop: 0 }, 500);
+            });
+        });
+    });
+</script>
+<style>
+    .clear ul li {
+        float: left;
+        list-style: none;
+        margin-right: 40px;
+    }
+</style>
+<div id="searcht">
+    <div class="search-m">
+        <div class="search_logo">
+            <a href="#">
+                <img height="55px" src="~/fonts/LOGE.png">
+            </a>
+        </div>
+        <div class="form">
+
+            @using (Html.BeginForm("Serch", "Home", FormMethod.Post, new { }))
+            {
+                @Html.TextBox("s", null, new { @class = "text", placeholder = "婚纱 西装 紫罗兰韵白" })
+
+                <button id="btn" type="submit" class="SearchButton"><i class="iconfont" style="color:#CCC"><img src="~/fonts/search.png"></i></button>
+            }
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="header">
+
+        <div class="header_top">
+            <div class="account_desc">
+                <ul>
+                    <li><a href="#">你好，欢迎来到花儿与绿叶！</a></li>
+                    @if (Session["UserName"] != null)
+                    {
+                        string Username = Convert.ToString(Session["UserName"]);
+                        <li>
+                            <a href="@Url.Action("UserDetail","Acount",new {id = Username  })">@Username</a>
+
+                        </li>
+                        <li> @Html.ActionLink("注销", "UserZhuXiao", "Acount", new { }, new { })</li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("欢迎登录", "Login", "Acount", new { }, new { })</li>
+                        <li>@Html.ActionLink("注册", "Reg", "Acount", new { }, new { })</li>
+                    }
+                </ul>
+            </div>
+            <div class="clear"></div>
+          
+        </div>
+
+        <div class="header_bottom">
+            <div class="menu">
+                <ul style="margin-left:43%">
+                    <li>@Html.ActionLink("主 页", "Index", "Home")</li>
+                    <li>@Html.ActionLink("最新商品", "NewProd", "Home")</li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+    <div class="main">
+        @using (Html.BeginForm("Login", "Acount", FormMethod.Post, new { name = "Login", onsubmit = "return checkform();" }))
+        {
+            <div class="content">
+                <div class="login_box">
+                    <div class="login_l"><img src="~/fonts/login_left.gif" width="462" height="355"></div>
+                    <div class="login_r">
+                        <div class="login_form">
+                            <div>
+                                <span>用户名</span>
+                                <div class="item-ifo">
+                                    @Html.TextBoxFor(Model => Model.UserName, new { @class = "sang_Calender" })
+                                    @Html.ValidationMessageFor(Model => Model.UserName)
+                                    <label id="loginname_succeed" class="red"></label>
+                                </div>
+                            </div>
+                            <div>
+                                <span>密码</span>
+                                <div class="item-ifo">
+                                    @Html.PasswordFor(Model => Model.UserPwd, new { @class = "sang_Calender" })
+                                    @Html.ValidationMessageFor(Model => Model.UserPwd)
+                                    @*<div class="i-password ico"></div>
+                                        <label id="loginpwd_succeed" class="red"></label>
+                                        <label id="loginpwd_error" class="hide"></label>*@
+                                </div>
+                            </div>
+                            <div class="clear">
+                                <ul>
+                                    <li>
+                                        @Html.ActionLink("后台登陆", "LoginMan")
+                                    </li>
+                                    <li>@Html.ActionLink("网站反馈", "Sugect", "Home", new { }, new { })</li>
+                                    <li>@Html.ActionLink("忘记密码?", "EditUserImfor", "Acount")</li>
+                                </ul>
+                                <div style="height:60px"></div>
+                                <input class="regBtn" type="submit" value="登录" />
+                            </div>
+                            @*<div class="mt50">
+                                    <input id="loginsubmit" class="btn-entry" type="button" clstag="passport|keycount|login|06" tabindex="8" value="登录">
+                                </div>*@
+                        </div>
+                        <div class="free-regist">
+                            <span>
+                                @Html.ActionLink("用户注册>>", "Reg", "Acount", new { }, new { })
+                            </span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="copy_right">
+                    <p>Flowers Sales 2019</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@Html.AntiForgeryToken()
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<link href="~/Content/BTN.css" rel="stylesheet" />
+<link href="~/Content/style.css" rel="stylesheet" />

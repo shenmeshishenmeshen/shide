@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Wedding.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>主页</h2>
+
+<p>
+    @Html.ActionLink("添加", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            用户名：
+        </th>
+       
+        <th>
+            邮箱：
+        </th>
+        <th>
+            注册时间：
+        </th>
+        <th>
+           性别：
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sex)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new { id=item.UserID }) |
+            @Html.ActionLink("详情", "Details", new { id=item.UserID }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.UserID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,56 @@
+﻿@model Wedding.Models.User
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>删除</h2>
+
+<h3>你确定要永久删除此用户吗?</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            用户名
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            邮箱
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+           注册时间
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegTime)
+        </dd>
+
+        <dt>
+          性别
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("返回", "Index")
+        </div>
+    }
+</div>

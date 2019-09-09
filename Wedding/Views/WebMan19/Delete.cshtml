@@ -1,0 +1,57 @@
+﻿@model Wedding.Models.ShangPin
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>你确定要永久删除此商品吗?</h3>
+<div>
+    <h4>商品</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           类别：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeiBie.Name)
+        </dd>
+
+        <dt>
+            介绍：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+           单价：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            图片及路径：
+        </dt>
+
+        <dd>
+            <img src="@Model.TuPian" style="width:100px;height:100px">
+            @Html.DisplayFor(model => model.TuPian)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("返回", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Wedding.Models.Prouduct>
+@helper Truncate(string input, int length)
+{
+    if (input.Length <= length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+<div class="banner" id="b04">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li id="slide-1" class="slide">
+                <div class="slider-img">
+                    <a href="@Url.Action("XiangQing", "Home", new{id=item.ShangPinId })"><img src="@item.TuPian" alt="learn more" style="width:330px;height:500px" /></a>
+                </div>
+                <div class="slider-text">
+                    <a href="/Home/XiangQing/11">
+                        <h2>
+                            极光紫穿...
+                            <br><span>婚纱</span>
+                        </h2>
+                        <h3>两折起</h3>
+                        <div class="features_list">
+                            <h5>
+                                这件婚纱以大裙摆取胜...
+                            </h5>
+                        </div>
+                    </a>
+                    <a href="@Url.Action("LiJiGouMai", "Home" ,new { id=item.ShangPinId})" class="button">Get！</a>
+                </div>
+
+            </li>
+        }
+    </ul>
+</div>
+<div class="unsliderprev">
+    <a href="javascript:void(0);"  class="unslider-arrow04 prev" ><img class="arrow" id="al" src="~/fonts/arrowl.png" alt="prev" width="20" height="35"></a>
+</div>  <div class="unslidernext">
+    <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="~/fonts/arrowr.png" alt="next" width="20" height="37"></a>
+</div>   
