@@ -317,6 +317,7 @@
     <Content Include="Content\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\webfonts\fa-solid-900.woff" />
     <Content Include="Content\webfonts\fa-solid-900.woff2" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\jquery.validate.js" />
