@@ -167,41 +167,32 @@ namespace Wedding.Controllers
             }
             return data;
         }
-        public ActionResult HomeSevView()
-        {
-            int ss1;
-            if (Session["UserName"] == null)
-            {
-                return RedirectToAction("Login", "Acount");
-            }
-            else
-            {
-                int uid = Convert.ToInt32(Session["UserId"]) + 100000;
-                if (Session["ManrName"] == null)
-                {
-                    ss1 = 1;
-                }
-                else
-                {
-                    string str = Convert.ToString(Session["ManrName"]);
-                    ss1 = db.Member.Where(a => a.ManrName == str).FirstOrDefault().ManrID;
-                }
-                var jihe = from s in db.SevTexts where s.TextId == uid || s.TextId == ss1 || s.Id == 1 select s;
-                return View(jihe);
+        //public ActionResult HomeSevView()
+        //{
+        //    int ss1;
+        //    if (Session["UserName"] == null)
+        //    {
+        //        return RedirectToAction("Login", "Acount");
+        //    }
+        //    else
+        //    {
+        //        int uid = Convert.ToInt32(Session["UserId"]) + 100000;
+        //        if (Session["ManrName"] == null)
+        //        {
+        //            ss1 = 1;
+        //        }
+        //        else
+        //        {
+        //            string str = Convert.ToString(Session["ManrName"]);
+        //            ss1 = db.Member.Where(a => a.ManrName == str).FirstOrDefault().ManrID;
+        //        }
+        //        var jihe = from s in db.SevTexts where s.TextId == uid || s.TextId == ss1 || s.Id == 1 select s;
+        //        return View(jihe);
 
-            }
+        //    }
 
-        }
-        public void TalekFun(string input1)
-        {
-            SevText sevText = new SevText();
-            int str = Convert.ToInt32(Session["UserId"]) + 100000;
-            sevText.TextId = str;
-            sevText.Text = input1;
-            sevText.TakeDatetime = DateTime.Now;
-            db.SevTexts.Add(sevText);
-            db.SaveChanges();
-        }
+        //}
+      
         public ActionResult Thank()
         {
             return View();

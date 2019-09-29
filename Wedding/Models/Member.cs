@@ -10,10 +10,6 @@ namespace Wedding.Models
     public partial class Member
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Member()
-        {
-            News = new HashSet<News>();
-        }
 
         [Key]
         public int ManrID { get; set; }
@@ -32,8 +28,6 @@ namespace Wedding.Models
 
         public DateTime RegisterTime { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<News> News { get; set; }
 
     }
 }

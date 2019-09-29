@@ -14,7 +14,7 @@ namespace Wedding.Models
             var User = new List<User>
             {
 
-                new User { UserName = "11",UserPwd="11",Email="36273963@qq.com",RegTime=Convert.ToDateTime("2017-12-30"),Sex="男" }
+                new User { UserName = "11",UserPwd="11",Email="36273963@qq.com",RegTime=Convert.ToDateTime("2019-12-30"),Sex="男" }
             };
             User.ForEach(d => context.User.Add(d));
             context.SaveChanges();
@@ -23,21 +23,21 @@ namespace Wedding.Models
             var members = new List<Member>
             {
 
-                new Member { ManrName = "111",ManPwd="111",rEmail="36273963@qq.com",RegisterTime=Convert.ToDateTime("2017-12-30") }
+                new Member { ManrName = "111",ManPwd="111",rEmail="36273963@qq.com",RegisterTime=Convert.ToDateTime("2019-12-30") }
         };
             members.ForEach(d => context.Member.Add(d));
             context.SaveChanges();
 
             var leiBies = new List<LeiBie>
             {
-                new LeiBie { Name = "玫瑰",TypeId=1,Description="爱情、爱与美、容光焕发，勇敢" },
-                new LeiBie { Name = "郁金香",TypeId=1,Description="爱、慈善、名誉、美丽、祝福、永恒、爱的表白和永恒的祝福"},
-                new LeiBie { Name = "百合",TypeId=1,Description="百年好合、美好家庭、伟大的爱，深深祝福"},
-                new LeiBie { Name = "复合花束",TypeId=1,Description="这里包涵所有的祝福！" },
-                new LeiBie { Name = "多肉",TypeId=2,Description="生命力顽强的小可爱？？" },
-                new LeiBie { Name = "果树",TypeId=2,Description="净化空气的同时还可以期待即将成熟小果实" },
-                new LeiBie { Name = "观赏性绿色植物",TypeId=2,Description="绿了绿了，全都绿起来了呢" },
-                new LeiBie { Name = "定制植物",TypeId=3,Description="自定义你最好的独一无二。" }
+                new LeiBie {LeiBieId=1, Name = "玫瑰",TypeId=1,Description="爱情、爱与美、容光焕发，勇敢" },
+                new LeiBie {LeiBieId=2, Name = "郁金香",TypeId=1,Description="爱、慈善、名誉、美丽、祝福、永恒、爱的表白和永恒的祝福"},
+                new LeiBie {LeiBieId=2, Name = "百合",TypeId=1,Description="百年好合、美好家庭、伟大的爱，深深祝福"},
+                new LeiBie {LeiBieId=2, Name = "复合花束",TypeId=1,Description="这里包涵所有的祝福！" },
+                new LeiBie {LeiBieId=2, Name = "多肉",TypeId=2,Description="生命力顽强的小可爱？？" },
+                new LeiBie {LeiBieId=2, Name = "果树",TypeId=2,Description="净化空气的同时还可以期待即将成熟小果实" },
+                new LeiBie { LeiBieId=2,Name = "观赏性绿色植物",TypeId=2,Description="绿了绿了，全都绿起来了呢" },
+                new LeiBie {LeiBieId=2, Name = "定制植物",TypeId=3,Description="自定义你最好的独一无二。" }
             };
             leiBies.ForEach(d => context.LeiBie.Add(d));
 

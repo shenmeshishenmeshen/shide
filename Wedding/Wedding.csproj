@@ -398,7 +398,6 @@
     <Content Include="Views\Acount\EditUserImfor.cshtml" />
     <Content Include="Views\Acount\EditUserImforagen.cshtml" />
     <Content Include="Views\WebMan19\SevView.cshtml" />
-    <Content Include="Views\Home\HomeSevView.cshtml" />
     <Content Include="Views\Home\Thank.cshtml" />
     <Content Include="Views\Home\Sugect.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
@@ -454,7 +453,6 @@
     <Compile Include="Models\WeddingEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
-    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

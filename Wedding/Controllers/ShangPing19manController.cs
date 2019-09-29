@@ -70,33 +70,7 @@ namespace Wedding.Controllers
             }
 
         }
-        [HttpPost]
-        public ActionResult PingJia(FormCollection collection)
-        {
-            if (ModelState.IsValid)
-            {
-                if (collection["s"] == null || collection["s"] == "")
-                {
-                    return Content("<script>alert('请输入评论内容');window.open ('" + Url.Content("#") + "' ,'_self')</script>");
-                }
-                else
-                {
-                    PingJia pingjia = new PingJia();
-                    pingjia.TuPian = collection["picimg"];
-                    pingjia.DateTime = DateTime.Now;
-                    pingjia.NeiRong = collection["s"];
-                    db.PingJia.Add(pingjia);
-                    db.SaveChanges();
-                    //return Content(collection["picimg"]);
-                    return Content("<script>alert('评价成功，感谢');window.open ('" + Url.Content("~/ShangPing19man/LISTHE") + "' ,'_self')</script>");
-                }
-            }
-            else
-            {
-                return Content("<script>alert('评价失败');window.open ('" + Url.Content("#") + "' ,'_self')</script>");
-            }
-
-        }
+      
         public ActionResult Uploadfile()
         {
             //上传文件

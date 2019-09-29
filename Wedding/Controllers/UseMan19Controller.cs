@@ -71,18 +71,7 @@ namespace Wedding.Controllers
 
             return View(user);
         }
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            var user = db.User.Find(id);
-            var sum = (from r in db.Cart where r.UserID == id select r).FirstOrDefault();
-            if (sum != null)
-                return Content("<script>alert('删除失败，该用户正在操作购物车！');window.open ('" 
-                    + Url.Content("~/UseMan19/Index") + "' ,'_self')</script>");
-            db.User.Remove(user);db.SaveChanges();
-            return Content("<script>alert('删除成功！');window.open ('" + Url.Content("~/UseMan19/Index") + "' ,'_self')</script>");
-        }
+
 
     }
 }

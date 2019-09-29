@@ -78,7 +78,7 @@
                                 <div class="item-ifo">
                                     @Html.AntiForgeryToken()
                                     @Html.TextBoxFor(Model => Model.UserName, new { @class = "frm_input user", id = "UserName" })
-                                    @Html.ValidationMessageFor(Model => Model.UserName)
+            
                                     <div id="errInfo1" class="txtform">
                                     </div>
 
@@ -91,7 +91,7 @@
                             <div class="frm_controls">
                                 <div class="item-ifo">
                                     @Html.PasswordFor(Model => Model.UserPwd, new { @class = "frm_input", @id = "Pwd" })
-                                    @Html.ValidationMessageFor(Model => Model.UserPwd)
+                  
                                     <div id="errInfo2" class="txtform">
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@
                             <div class="frm_controls">
                                 <div class="item-ifo">
                                     @Html.TextBoxFor(Model => Model.Email, new { @class = "frm_input", @id = "youxiang" })
-                                    @Html.ValidationMessageFor(Model => Model.Email)
+                              
                                     <div id="errInfo3" class="txtform">
                                     </div>
                                 </div>

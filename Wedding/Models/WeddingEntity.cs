@@ -41,11 +41,6 @@ namespace Wedding.Models
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Member>()
-                .HasMany(e => e.News)
-                .WithRequired(e => e.Member)
-                .HasForeignKey(e => e.ManID);
-
             modelBuilder.Entity<Order>()
                 .Property(e => e.Total)
                 .HasPrecision(10, 2);
