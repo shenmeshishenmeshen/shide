@@ -165,40 +165,29 @@ namespace Wedding.Models
                new Prouduct { LeiBie = leiBies.Single(g => g.Name == "果树"),Varieties="果树",IsNew="N",Title="想编自己编。" ,Price=389.00m,TuPian="/Content/fruitTrees/14.jpg"},
                new Prouduct { LeiBie = leiBies.Single(g => g.Name == "果树"),Varieties="果树",IsNew="N",Title="想编自己编。" ,Price=389.00m,TuPian="/Content/fruitTrees/15.jpg"},
 
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="果树",IsNew="N",Title="想编自己编。" ,Price=58.00m,TuPian="/Content/green/1.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="果树",IsNew="N",Title="想编自己编。" ,Price=69.00m,TuPian="/Content/green/2.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="果树",IsNew="N",Title="想编自己编。" ,Price=39.00m,TuPian="/Content/green/3.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="果树",IsNew="Y",Title="想编自己编。" ,Price=59.00m,TuPian="/Content/green/4.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="果树",IsNew="N",Title="想编自己编。" ,Price=38.00m,TuPian="/Content/green/5.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="果树",IsNew="N",Title="想编自己编。" ,Price=49.00m,TuPian="/Content/green/6.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=569.00m,TuPian="/Content/green/7.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="N",Title="想编自己编。" ,Price=59.00m,TuPian="/Content/green/8.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="N",Title="想编自己编。" ,Price=239.00m,TuPian="/Content/green/9.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="N",Title="想编自己编。" ,Price=89.00m,TuPian="/Content/green/10.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="N",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/green/10.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/green/11.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="N",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/green/12.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="N",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/green/13.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="N",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/green/14.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/green/15.jpg"},
 
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/1.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/2.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/3.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/4.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/5.jpg"},
 
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=13223.00m,TuPian="/Content/Xizhuang/1.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=46546.00m,TuPian="/Content/Xizhuang/2.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=4283.00m,TuPian="/Content/Xizhuang/3.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=6936581.00m,TuPian="/Content/Xizhuang/4.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=32626151.00m,TuPian="/Content/Xizhuang/5.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=56262.00m,TuPian="/Content/Xizhuang/6.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=6264626.00m,TuPian="/Content/Xizhuang/7.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=96255.00m,TuPian="/Content/Xizhuang/8.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=36399.00m,TuPian="/Content/Xizhuang/9.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "新郎服装"),Title="因为你是特别的",Price=36399.00m,TuPian="/Content/Xizhuang/10.jpg" },
-
-
-
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "场地"),Title="婚礼举办在碧绿的草坪上。正中间是一个碧绿的窗帘，窗帘前面悬挂着华丽的灯，窗帘下面的地上摆放着很多的绿色盆栽，整体装饰风格偏欧式，清新而自然。",Price=262525.00m,TuPian="/Content/Site/1.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "场地"),Title="罗马仪式亭装饰方法：罗马仪式亭的风格主要是铁艺设计，顶部是使用铁艺镂空的设计，弄成圆形，我们都知道卢浮宫就类似这种设计，罗马亭主要是搭配鲜花，用铁艺来做好空架子，然后用鲜花装饰，就像公主的花门非常的漂亮。",Price=858285.00m,TuPian="/Content/Site/2.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "场地"),Title="室内婚礼仪式亭装饰方法：国内婚礼百分之八十都是在酒店大厅举行，这种舞台仪式亭就比较好装饰，一般选择新人的照片做一个大的背板，然后在进行花朵装饰，在舞台中间装饰一个走廊，是新娘进场的地方，整体也是选择用白色的花朵来搭配。",Price=59396.00m,TuPian="/Content/Site/3.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "场地"),Title="有特色的民族风格仪式亭装饰方法;海外风格的婚礼是大家都期待的，但是由于资金问题不能直接到海外，大家可以参考海外装饰风格来弥补，现在的很多装饰婚礼都可以做到这一天，使用3D的海外装饰方法，可以让婚礼变成海外风格仪式亭。",Price=59922.00m,TuPian="/Content/Site/4.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "场地"),Title="森林铁艺婚礼仪式亭装饰方法：这种仪式亭一般都是用在户外的草坪婚礼，大家可以选择有复古风格的藤条搭配铁艺技术，搭配弄好有欧式风格的外形，然后子啊使用一些木质材料进行装饰，搭配上一些小的照片，这样的仪式亭很有贵族气息教堂布置",Price=232135.00m,TuPian="/Content/Site/29.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "场地"),Title="在去教堂举办婚礼之前，对于礼堂的布置肯定是不能省略的。在这里你可不能随心所欲地布置得花花绿绿哦，既然是要举办西式神圣的婚礼，那一定是以纯洁的白色为主。",Price=122536.00m,TuPian="/Content/Site/6.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "场地"),Title="在选择婚礼用花时，挑选一些素雅高贵颜色的花为主，比如白色的百合、香槟色的玫瑰，配上简单的绿叶做点缀辅材。中式婚礼的主色调常常是喜庆的红色，但是在这里就不需要各种鞭炮、气球啦，尊重西方的习俗",Price=1262525.00m,TuPian="/Content/Site/7.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "场地"),Title="教堂婚礼对于新人的穿着有一定的要求，正如现场布置一样，选择红色秀禾服肯定是不妥，无论是在基督教堂还是天主教堂，都必须穿白色婚纱，必须!这时候配上教堂式头纱可谓是再适合不过了。",Price=48825.00m,TuPian="/Content/Site/8.jpg" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "场地"),Title="有特色的民族风格仪式亭装饰方法;海外风格的婚礼是大家都期待的，但是由于资金问题不能直接到海外，大家可以参考海外装饰风格来弥补，现在的很多装饰婚礼都可以做到这一天，使用3D的海外装饰方法，可以让婚礼变成海外风格仪式亭。",Price=59922.00m,TuPian="/Content/Site/9.jpg" },
-
-
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "婚车"),Title="野马汽车在20世纪80年代末改革开放的大潮中诞生，是全国最早生产汽车的厂家之一。2006年8月更名为四川汽车工业集团有限公司，2011年12月经股份重组后正式更名为四川野马汽车股份有限公司。",Price=969332.00m,TuPian="/Content/HunCheImages/1.png" },
-                  new Prouduct { LeiBie = leiBies.Single(g => g.Name == "婚车"),Title="在经典的黄色底漆上，科迈罗大黄蜂概念车于发动机罩上涂上了经典的黑色赛车条纹，使人很容易的辨认出其大黄蜂的真实身份。更狭窄的水箱格栅以及更圆滑的线条，也使科迈罗大黄蜂概念车拥有了与前3部截然不同的外型。",Price=825252.00m,TuPian="/Content/HunCheImages/2.png" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "婚车"),Title="保时捷911是由德国斯图加特市的保时捷公司所生产的跑车。由费迪南德·亚历山大·保时捷（Ferdinand Alexander Porsche）所设计的作品。从1963年诞生以来，共经历了七代车型，因其独特的风格与极佳的耐用性享誉世界",Price=262626.00m,TuPian="/Content/HunCheImages/3.png" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "婚车"),Title="Bugatti Veyron中国市场登记命名为布加迪威航，即布加迪威龙，世界顶级超跑车的典范，最普通款型的中国市场价也要2500万元，高性能版本的售价则更是在3500万以上。其品牌源自意大利，由法国车厂负责生产",Price=5959363.00m,TuPian="/Content/HunCheImages/4.png" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "婚车"),Title="保时捷911是由德国斯图加特市的保时捷公司所生产的跑车。由费迪南德·亚历山大·保时捷（Ferdinand Alexander Porsche）所设计的作品。从1963年诞生以来，共经历了七代车型，因其独特的风格与极佳的耐用性享誉世界",Price=156562.00m,TuPian="/Content/HunCheImages/5.png" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "婚车"),Title="保时捷911是由德国斯图加特市的保时捷公司所生产的跑车。由费迪南德·亚历山大·保时捷（Ferdinand Alexander Porsche）所设计的作品。从1963年诞生以来，共经历了七代车型，因其独特的风格与极佳的耐用性享誉世界",Price=15253.00m,TuPian="/Content/HunCheImages/6.png" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "婚车"),Title="保时捷911是由德国斯图加特市的保时捷公司所生产的跑车。由费迪南德·亚历山大·保时捷（Ferdinand Alexander Porsche）所设计的作品。从1963年诞生以来，共经历了七代车型，因其独特的风格与极佳的耐用性享誉世界",Price=65655.00m,TuPian="/Content/HunCheImages/7.png" },
-                 new Prouduct { LeiBie = leiBies.Single(g => g.Name == "婚车"),Title="保时捷911是由德国斯图加特市的保时捷公司所生产的跑车。由费迪南德·亚历山大·保时捷（Ferdinand Alexander Porsche）所设计的作品。从1963年诞生以来，共经历了七代车型，因其独特的风格与极佳的耐用性享誉世界",Price=365226.00m,TuPian="/Content/HunCheImages/8.png" },
             };
             shangpin.ForEach(d => context.ShangPin.Add(d));
 
