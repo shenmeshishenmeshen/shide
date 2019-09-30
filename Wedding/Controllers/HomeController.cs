@@ -94,10 +94,18 @@ namespace Wedding.Controllers
             var hunsha = db.Prouduct.Find(id);
             return View(hunsha);
         }
-        public ActionResult LiJiGouMai(int id)
+        public ActionResult LiJiGouMai(FormCollection form)
         {
+           
             if (Session["UserName"] != null)
             {
+                if (form!=null)
+                {
+
+
+                    ViewBag.tishi = "订单已生成";
+
+                }
                 var hunsha = db.Prouduct.Find(id);
                 return View(hunsha);
             }

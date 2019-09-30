@@ -19,6 +19,33 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+<script type="text/javascript" src="~/Scripts/jquery-1.11.1.min.js"></script>
+<script>
+    $(function () {
+
+        $(".add").click(function () {
+            var t = $(this).parent().find('input[class*=text_box]');
+            t.val(parseInt(t.val()) + 1)
+            setTotal();
+        })
+        $(".min").click(function () {
+            var t = $(this).parent().find('input[class*=text_box]');
+            t.val(parseInt(t.val()) - 1)
+            if (parseInt(t.val()) < 0) {
+                t.val(0);
+            }
+            setTotal();
+        })
+
+        function setTotal() {
+            var s = 0;
+            s += parseInt($(".text_box").val()) * parseFloat($(".price").text());
+            $("#total").html(s.toFixed(2));
+        }
+
+        /* setTotal();  */
+
+    })</script>
 <div class="wrap">
     <div class="header">
 
@@ -90,11 +117,12 @@
                         <div id="J_TEditItem" class="tb-editor-menu"></div>
                     </div>
                     <div id="J_Banner" class="tb-banner" style="height:30px"></div>
+
                     <ul class="tb-meta">
                         <li id="J_StrPriceModBox" class="tb-detail-price tb-clear" shortcut-key="p" shortcut-label="查看价格" shortcut-effect="focus">
                             <span class="tb-property-type">价格</span>
                             <div class="tb-property-cont">
-                                <strong id="J_StrPrice"><em class="tb-rmb">&yen;</em><em class="tb-rmb-num">@Model.Price</em></strong>
+                                <strong id="J_StrPrice"><em class="tb-rmb">&yen;</em><em class="tb-rmb-num"><span class="price">@Model.Price</span></em></strong>
 
                             </div>
                         </li>
@@ -112,44 +140,32 @@
                             </div>
                         </li>
                     </ul>
-                    <div style="height:50px"></div>
-                    <div id="" style="height:30px">@Html.ActionLink("评价", "PingJia", "ShangPing19man", new { id = Model.ProuductId }, new { })</div>
-
-
-
-
-                    <div id="" style="height:30px"></div>
-
-
-                    <div id="" style="height:30px"></div>
-
-
-
-
-                    <div class="tb-btn-add" style="float:left;width:120px;height:40px;padding-bottom:10px;padding-right:10px">
-
-                        <a href="@Url.Action("LiJiGouMai", "Home" ,new { id=Model.ProuductId})">
-                            <input class="regBtn" type="submit" value="立即购买" />
-                        </a>
-
-                    </div>
-
-
-                </div>
-                <div class="tb-btn-add" style="float:left;width:120px;height:40px;padding-bottom:10px;padding-right:10px">
-                    @using (Html.BeginForm())
+                    @using (Html.BeginForm("LiJiGouMai", "Home", FormMethod.Post, new { }))
                     {
-                        @Html.AntiForgeryToken()
-                        <div style="width:120px;height:40px">
-                            @Html.ActionLink("加入购物车", "AddtoCart", "ShoppingCart", new { id = Model.ProuductId }, "")
-                        </div>
-                    }
+                        <div style="height:50px"></div>
 
+                        <div id="" style="height:30px">
+                            数量 ：<input class="min" name="" type="button" value="-" />
+                            <input class="text_box" name="count" type="text" value="1" style="width:4%" />
+                            <input class="add" name="" type="button" value="+" />
+                        </div>
+                        <div id="" style="height:30px">
+                            <p>总价：<label id="total" name="total"></label></p>
+                        </div>
+                        <div class="tb-btn-add" style="float:left;width:120px;height:40px;padding-bottom:10px;padding-right:10px">
+
+                            <input class="regBtn" type="submit" value="立即购买" />
+
+                        </div>
+
+                    }
                 </div>
 
             </div>
+
         </div>
     </div>
+</div>
 </div>
 
 
