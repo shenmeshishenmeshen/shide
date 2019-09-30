@@ -16,7 +16,7 @@ namespace Wedding.Models
         public virtual DbSet<Member> Member { get; set; }
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderDetail> OrderDetail { get; set; }
-        public virtual DbSet<Prouduct> ShangPin { get; set; }
+        public virtual DbSet<Prouduct> Prouduct { get; set; }
         public virtual DbSet<User> User { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -32,12 +32,12 @@ namespace Wedding.Models
             {
                 new LeiBie {LeiBieId=1, Name = "玫瑰",TypeId=1,Description="爱情、爱与美、容光焕发，勇敢" },
                 new LeiBie {LeiBieId=2, Name = "郁金香",TypeId=1,Description="爱、慈善、名誉、美丽、祝福、永恒、爱的表白和永恒的祝福"},
-                new LeiBie {LeiBieId=2, Name = "百合",TypeId=1,Description="百年好合、美好家庭、伟大的爱，深深祝福"},
-                new LeiBie {LeiBieId=2, Name = "复合花束",TypeId=1,Description="这里包涵所有的祝福！" },
-                new LeiBie {LeiBieId=2, Name = "多肉",TypeId=2,Description="生命力顽强的小可爱？？" },
-                new LeiBie {LeiBieId=2, Name = "果树",TypeId=2,Description="净化空气的同时还可以期待即将成熟小果实" },
-                new LeiBie { LeiBieId=2,Name = "观赏性绿色植物",TypeId=2,Description="绿了绿了，全都绿起来了呢" },
-                new LeiBie {LeiBieId=2, Name = "定制植物",TypeId=3,Description="自定义你最好的独一无二。" }
+                new LeiBie {LeiBieId=3, Name = "百合",TypeId=1,Description="百年好合、美好家庭、伟大的爱，深深祝福"},
+                new LeiBie {LeiBieId=4, Name = "复合花束",TypeId=1,Description="这里包涵所有的祝福！" },
+                new LeiBie {LeiBieId=5, Name = "多肉",TypeId=2,Description="生命力顽强的小可爱？？" },
+                new LeiBie {LeiBieId=6, Name = "果树",TypeId=2,Description="净化空气的同时还可以期待即将成熟小果实" },
+                new LeiBie { LeiBieId=7,Name = "观赏性绿色植物",TypeId=2,Description="绿了绿了，全都绿起来了呢" },
+                new LeiBie {LeiBieId=8, Name = "定制植物",TypeId=3,Description="自定义你最好的独一无二。" }
             };
             leiBies.ForEach(d => context.LeiBie.Add(d));
 
@@ -182,14 +182,15 @@ namespace Wedding.Models
                new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="N",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/green/14.jpg"},
                new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/green/15.jpg"},
 
-               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/1.jpg"},
-               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/2.jpg"},
-               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/3.jpg"},
-               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/4.jpg"},
-               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "观赏性绿色植物"),Varieties="观赏性绿色植物",IsNew="Y",Title="想编自己编。" ,Price=99.00m,TuPian="/Content/Custom/5.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "定制植物"),Varieties="定制植物",IsNew="Y",Title="想编自己编。" ,Price=565.00m,TuPian="/Content/Custom/1.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "定制植物"),Varieties="定制植物",IsNew="N",Title="想编自己编。" ,Price=5599.00m,TuPian="/Content/Custom/2.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "定制植物"),Varieties="定制植物",IsNew="N",Title="想编自己编。" ,Price=985.00m,TuPian="/Content/Custom/3.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "定制植物"),Varieties="定制植物",IsNew="N",Title="想编自己编。" ,Price=5885.00m,TuPian="/Content/Custom/4.jpg"},
+               new Prouduct { LeiBie = leiBies.Single(g => g.Name == "定制植物"),Varieties="定制植物",IsNew="N",Title="想编自己编。" ,Price=5858.00m,TuPian="/Content/Custom/5.jpg"},
+
 
             };
-            shangpin.ForEach(d => context.ShangPin.Add(d));
+            shangpin.ForEach(d => context.Prouduct.Add(d));
 
             context.SaveChanges();
         }

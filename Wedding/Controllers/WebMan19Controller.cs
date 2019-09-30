@@ -15,7 +15,7 @@ namespace Wedding.Controllers
         // GET: WebMan19
         public ActionResult Index()
         {
-            var he = db.ShangPin.ToList();
+            var he = db.Prouduct.ToList();
             return View(he);
         }
         public ActionResult Uploadfile()
@@ -35,7 +35,7 @@ namespace Wedding.Controllers
         }
         public ActionResult Edit(int id)
         {
-            var album = db.ShangPin.Find(id);
+            var album = db.Prouduct.Find(id);
 
             ViewBag.LeiBieId = new SelectList(db.LeiBie, "LeiBieId", "Name", album.LeiBieId);
             return View(album);
@@ -43,7 +43,7 @@ namespace Wedding.Controllers
         [HttpPost]
         public ActionResult Edit(FormCollection form)
         {
-            int id = int.Parse(form["id"]); var cc = db.ShangPin.Find(id);
+            int id = int.Parse(form["id"]); var cc = db.Prouduct.Find(id);
             if (ModelState.IsValid)
             {
                 string jiaqian = form["Price"]; string jieshao = form["Title"]; string tupian = form["TuPian"];
@@ -58,7 +58,7 @@ namespace Wedding.Controllers
         }
         public ActionResult Details(int id)
         {
-            var shangpin = db.ShangPin.Find(id);
+            var shangpin = db.Prouduct.Find(id);
             return View(shangpin);
         }
 
@@ -75,7 +75,7 @@ namespace Wedding.Controllers
             if (ModelState.IsValid)
             {
                 UpdateModel(shangPin, form);
-                db.ShangPin.Add(shangPin); db.SaveChanges();
+                db.Prouduct.Add(shangPin); db.SaveChanges();
                 return Content("<script>alert('添加成功！');window.open ('"
                     + Url.Content("~/WebMan19/Index") + "' ,'_self')</script>");
             }
@@ -84,7 +84,7 @@ namespace Wedding.Controllers
         }
         public ActionResult Delete(int id)
         {
-            var shangPin = db.ShangPin.Find(id);
+            var shangPin = db.Prouduct.Find(id);
             ViewBag.LeiBieId = new SelectList(db.LeiBie, "LeiBieId", "Name", shangPin.LeiBieId);
 
             return View(shangPin);

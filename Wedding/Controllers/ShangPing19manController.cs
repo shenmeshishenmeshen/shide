@@ -61,7 +61,7 @@ namespace Wedding.Controllers
         {
             if (Session["UserName"] != null)
             {
-                var shangpin = db.ShangPin.Find(id);
+                var shangpin = db.Prouduct.Find(id);
                 return View(shangpin);
             }
             else
@@ -90,7 +90,7 @@ namespace Wedding.Controllers
         }
         public ActionResult List(int id,int? page)
         {
-            var ss2 = from s in db.ShangPin.OrderBy(p => p.ProuductId).Where(p => p.LeiBieId ==id) select s;
+            var ss2 = from s in db.Prouduct.OrderBy(p => p.ProuductId).Where(p => p.LeiBieId ==id) select s;
             int pageNumber = page ?? 1;
             //第几页，有值就为值，没值就唯1；
             int pageSize = 24;
@@ -99,7 +99,7 @@ namespace Wedding.Controllers
         }
         public ActionResult LISTHE(int? page )
         {
-            var ss2 = from s in db.ShangPin.OrderBy(p => p.ProuductId) select s;
+            var ss2 = from s in db.Prouduct.OrderBy(p => p.ProuductId) select s;
             int pageNumber = page ?? 1;
             //第几页，有值就为值，没值就唯1；
             int pageSize = 24;

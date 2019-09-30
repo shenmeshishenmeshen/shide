@@ -27,23 +27,23 @@ namespace Wedding.Controllers
         // GET: Home
         public ActionResult Index()
         {
-      //(Session["UserName"] != null)
+            //(Session["UserName"] != null)
             //{
 
             //}
-            var hunsha = (from s in db.ShangPin where s.LeiBieId == 1 orderby s.ProuductId descending select s).Take(4).ToList();
+            var hunsha = (from s in db.Prouduct where s.LeiBieId == 1 orderby s.ProuductId descending select s).Take(4).ToList();
 
             return View(hunsha);
         }
         [ChildActionOnly]
         public ActionResult LUNbo()
         {
-            var hunsha = (from s in db.ShangPin where s.LeiBieId == 1 orderby s.ProuductId descending select s).Take(3).ToList();
+            var hunsha = (from s in db.Prouduct where s.LeiBieId == 1 orderby s.ProuductId descending select s).Take(3).ToList();
             return PartialView(hunsha);
         }
         public ActionResult NewProd(int? page)
         {
-            var ss2 = from s in db.ShangPin.OrderBy(p => p.ProuductId).Where(p => p.ProuductId > 0) select s;
+            var ss2 = (from s in db.Prouduct where s.IsNew == "Y" select s).ToList();
             int pageNumber = page ?? 1;
             //第几页，有值就为值，没值就唯1；
             int pageSize = 24;
@@ -51,41 +51,54 @@ namespace Wedding.Controllers
             return View(pagedList);
         }
 
-      
-        public ActionResult Serch(FormCollection form, int? page)
+
+        public ActionResult Serch(FormCollection form,  int? page,string serch="")
         {
             ViewBag.SearchText = form["s"]; ViewBag.retu = "你搜索的结果:";
-            string sText = form["s"].Trim();
-            if (sText != "" || sText != null){
-                var Result = from s in db.ShangPin.OrderBy
+            string sText = "";
+            if (form["s"]!=null)
+            {
+                 sText = form["s"].Trim();
+            }
+            if (!string.IsNullOrEmpty(serch))
+            {
+                sText = ViewBag.SearchText = serch;
+            }
+            if (sText != "" || sText != null)
+            {
+                var Result = from s in db.Prouduct.OrderBy
                              (p => p.ProuductId).Where(p => p.Title.Contains(sText) || p.LeiBie.Name.Contains(sText))
                              select s;
-                if (Result.Count() == 0){
+                if (Result.Count() == 0)
+                {
                     ViewBag.SearchText = "没有你想要的结果……";
-                    Result = from s in db.ShangPin.OrderBy(p => p.ProuductId) select s;}
-                int pageNumber = page ?? 1;int pageSize = 24;
+                    Result = from s in db.Prouduct.OrderBy(p => p.ProuductId) select s;
+                }
+                int pageNumber = page ?? 1; int pageSize = 24;
                 IPagedList<Prouduct> pagedList = Result.ToPagedList(pageNumber, pageSize);
-                return View(pagedList);}
+                return View(pagedList);
+            }
             else
-                return Content("<script>alert('请输入你要搜索的关键字');window.open ('" + 
-                    Url.Content("#") + "' ,'_self')</script>"); }
+                return Content("<script>alert('请输入你要搜索的关键字');window.open ('" +
+                    Url.Content("#") + "' ,'_self')</script>");
+        }
         [ChildActionOnly]
-        public ActionResult Xzhu()
+        public ActionResult AllProuduct(int id)
         {
-            var xizhuang = (from s in db.ShangPin where s.LeiBieId == 2 orderby s.ProuductId descending select s).Take(4).ToList();
+            var prouducts = (from s in db.Prouduct where s.LeiBieId == id orderby s.ProuductId descending select s).Take(4).ToList();
 
-            return PartialView(xizhuang);
+            return PartialView(prouducts);
         }
         public ActionResult XiangQing(int id)
         {
-            var hunsha = db.ShangPin.Find(id);
+            var hunsha = db.Prouduct.Find(id);
             return View(hunsha);
         }
         public ActionResult LiJiGouMai(int id)
         {
             if (Session["UserName"] != null)
             {
-                var hunsha = db.ShangPin.Find(id);
+                var hunsha = db.Prouduct.Find(id);
                 return View(hunsha);
             }
             else
@@ -95,7 +108,7 @@ namespace Wedding.Controllers
         [ChildActionOnly]
         public ActionResult Hunche(int? page)
         {
-            var hunche = from s in db.ShangPin where s.LeiBieId == 4 orderby s.ProuductId descending select s;
+            var hunche = from s in db.Prouduct where s.LeiBieId == 4 orderby s.ProuductId descending select s;
             int pageNumber = page ?? 1;
             //第几页，有值就为值，没值就唯1；
             int pageSize = 24;
@@ -103,9 +116,9 @@ namespace Wedding.Controllers
             return View(pagedList);
         }
         [ChildActionOnly]
-        public ActionResult Changdi()
+        public ActionResult baihe()
         {
-            var changdi = (from s in db.ShangPin where s.LeiBieId == 3 orderby s.ProuductId descending select s).Take(4).ToList();
+            var changdi = (from s in db.Prouduct where s.LeiBieId == 3 orderby s.ProuductId descending select s).Take(4).ToList();
 
 
             return PartialView(changdi);
@@ -118,7 +131,14 @@ namespace Wedding.Controllers
 
             return PartialView(changdi);
         }
-     
+
+        public ActionResult TypeToProuduct()
+        {
+            var Types = db.LeiBie.ToList();
+
+            return PartialView(Types);
+        }
+
         //public ActionResult Servicer1(string input1)
         //{
         //    string input = input1;
@@ -192,14 +212,14 @@ namespace Wedding.Controllers
         //    }
 
         //}
-      
+
         public ActionResult Thank()
         {
             return View();
         }
         public ActionResult Sugect()
         {
-                return View();
+            return View();
         }
     }
 }
