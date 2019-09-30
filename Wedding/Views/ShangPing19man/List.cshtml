@@ -1,0 +1,177 @@
+﻿@model PagedList.IPagedList<Wedding.Models.Prouduct>
+@using PagedList.Mvc;
+@helper Truncate(string input, int length)
+{
+    if (input.Length <= length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+@{
+    Layout = null;
+}
+
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <div id="searcht">
+        <div class="search-m">
+            <div class="search_logo1">
+                <a href="#">
+                    <img height="55px" src="~/fonts/LOGE.png">
+                </a>
+            </div>
+            <div class="form">
+
+                @using (Html.BeginForm("Serch", "Home", FormMethod.Post, new { }))
+                {
+                    @Html.TextBox("s", null, new { @class = "text1", placeholder = "玫瑰 康乃馨 郁金香" })
+                    <button id="btn" type="submit" class="SearchButton"><i class="iconfont" style="color:#CCC"><img src="~/fonts/search.png"></i></button>
+                }
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            var timer = null;
+            var pageHeight = document.documentElement.clientHeight;    //获取可视区域的高度
+            window.onscroll = function () {        //onscroll 事件在元素滚动时执行
+                var backtop = $(document).scrollTop();
+                //获取滚动条滚动的垂直距离
+                if (backtop >= 200) {
+                    $('#dtop').show();
+                    $('#searcht').show();
+                    //若滚动条滚动的垂直距离大于180px,则显示“回到顶部”链接,否则隐藏
+                } else {
+                    $("#dtop").hide();
+                    $("#searcht").hide();
+                }
+            }
+            $(function () {
+                $("#dtop").click(function () {
+                    $("html,body").animate({ scrollTop: 0 }, 500);
+                });
+            });
+        });
+    </script>
+    <div class="wrap">
+        <div class="header">
+            <div class="header_top">
+                <div class="account_desc">
+                    <ul>
+                        <li><a href="#">你好，欢迎来到花儿与绿叶！</a></li>
+                        @if (Session["UserName"] != null)
+                        {
+                            string Username = Convert.ToString(Session["UserName"]);
+                            <li>
+                                <a href="@Url.Action("UserDetail","Acount",new {id = Username  })"><img src="~/fonts/用户.png" />@Username</a>
+                            </li>
+                            <li> @Html.ActionLink("注销", "UserZhuXiao", "Acount", new { }, new { })</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("欢迎登录", "Login", "Acount", new { }, new { })</li>
+                            <li>@Html.ActionLink("注册", "Reg", "Acount", new { }, new { })</li>
+                        }
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                @if (Session["UserName"] != null)
+                {
+                    <div class="cart">
+                        <a href="@Url.Action("Index", "ShoppingCart")">
+                            @{Html.RenderAction("Cart", "Home");}
+                        </a>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <uc1:Menu runat="server" ID="Menu" />
+            <div class="header_bottom">
+                <div class="menu">
+                    <ul style="margin-left:43%">
+                        <li>@Html.ActionLink("主页", "Index", "Home")</li>
+                        <li>@Html.ActionLink("最新商品", "NewProd", "Home")</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+             
+                <div class="clear"></div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        @if (ViewBag.SearchText != "")
+        {
+            @ViewBag.retu
+            @ViewBag.SearchText
+
+        }
+        <div class="main">
+            <div class="content">
+
+                <div class="content_top">
+                    <div class="heading">
+                        <h3><b>全部</b></h3>
+                    </div>
+                    <div class="see">
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="section group">
+                    @foreach (var item in Model)
+                    {
+                        <div class="grid_1_of_4 images_1_of_4">
+                            <a href="@Url.Action("XiangQing", "Home", new{id=item.ProuductId })">
+                                <p style=" height:20px">
+                                <p>
+                                    <img src="@item.TuPian" style="width:200.68px;height:260.68px">
+
+                                    <h2>@Truncate(item.Title, 8)<b>@item.Price</b>元秒杀价！ </h2>
+                            </a>
+                            <div class="price-details">
+                                <div class="price-number">
+                                    <p><span class="rupees">￥@item.Price</span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4> @Html.ActionLink("查看详情", "XiangQing", "Home", new { id = item.ProuductId }, "")</h4>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="wode">
+            @Html.PagedListPager(Model, page => Url.Action("List", new { page }))
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="clear"></div>
+        <div class="copy_right">
+            <p>Copyright &copy; 2018.CCIT.</p>
+        </div>
+    </div>
+    <div id="dtop">
+
+        <a href="javascript:;">
+
+            <img width="49px" height="45px" src="~/fonts/713efe21fbebae1158ced124199ded18.png" title="返回顶部" />
+
+        </a>
+
+    </div>
+</body>

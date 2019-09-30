@@ -59,7 +59,7 @@
 
                 @using (Html.BeginForm("Serch", "Home", FormMethod.Post, new { }))
                 {
-                    @Html.TextBox("s", null, new { @class = "text1" })
+                    @Html.TextBox("s", null, new { @class = "text1", placeholder = "玫瑰 康乃馨 郁金香" })
 
                     <button id="btn" type="submit" class="SearchButton"><i class="iconfont" style="color:#CCC"><img src="~/fonts/search.png"></i></button>
                 }
@@ -127,7 +127,7 @@
                     @foreach (var item in Model)
                     {
                         <div class="grid_1_of_4 images_1_of_4">
-                            <a href="@Url.Action("XiangQing", "Home", new{id=item.ShangPinId })">
+                            <a href="@Url.Action("XiangQing", "Home", new{id=item.ProuductId })">
                                 <p style=" height:20px">
                                 <p>
                                     <img src="@item.TuPian" style="width:200.68px;height:260.68px">
@@ -138,7 +138,9 @@
                                 <div class="price-number">
                                     <p><span class="rupees">￥@item.Price</span></p>
                                 </div>
-                              
+                                <div class="add-cart">
+                                    <h4> @Html.ActionLink("查看详情", "XiangQing", "Home", new { id = item.ProuductId }, "")</h4>
+                                </div>
                                 <div class="clear"></div>
                             </div>
                         </div>
@@ -147,7 +149,7 @@
                 </div>
             </div>
             <div class="wode">
-                @Html.PagedListPager(Model, page => Url.Action("Serch", new { page }))
+                @Html.PagedListPager(Model, page => Url.Action("Serch", new {serch= ViewBag.SearchText, page }))
             </div>
         </div>
     </div>

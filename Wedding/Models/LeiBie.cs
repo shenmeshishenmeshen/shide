@@ -20,7 +20,6 @@ namespace Wedding.Models
         [StringLength(120)]
         public string Name { get; set; }
 
-        [StringLength(20)]
         public int TypeId { get; set; }
 
 

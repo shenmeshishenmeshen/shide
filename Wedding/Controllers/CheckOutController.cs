@@ -18,47 +18,6 @@ namespace Wedding.Controllers
         WeddingEntity db = new WeddingEntity();
         const String KEY = "f8abfbc6cf7244d195a3e8891bb04837";
         // GET: CheckOut
-        public ActionResult AddToOrd()
-        {
-            int u = Convert.ToInt32(Session["UserId"]);
-            var Cart = ShoppingCart.GetCart(this.HttpContext);
-            decimal sum = Cart.GetTotal(u);
-            if (Session["UserName"] != null)
-            {
-                var order = new Order();
-               
-                order.Username = Session["Username"].ToString();
-                order.OrderDate = DateTime.Now;
-                order.Total = sum;
-                return View(order);
-            }
-            else
-            {
-                return RedirectToAction("Login", "Acount");
-            }
-
-
-        }
-       
-        public void AddToOrd1(string dizhi)
-        {
-            string s = Convert.ToString(Session["UserName"]);
-            int uid = Convert.ToInt32(Session["UserId"]);
-            var cart = ShoppingCart.GetCart(this.HttpContext);
-            if (ModelState.IsValid)
-            {
-                Order member = new Order();
-                member.OrderDate = DateTime.Now;
-                member.Total = cart.GetTotal(uid);
-                member.Username = s;
-                TryUpdateModel(member);
-                db.Order.Add(member);
-                db.SaveChanges();
-                cart.EmptyCart(uid);
-                cart.CreateOrder(member, uid);
-            }
-          
-        }
         public ActionResult Servicer1(string input1)
         {
             string input = input1;

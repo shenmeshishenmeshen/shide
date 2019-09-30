@@ -1,6 +1,12 @@
 function validateData(){
-	$("#errInfo").html(""); //清空错误信息
-	$("#errInfo").removeClass("errStyle"); //隐藏错误信息区域
+    $("#errInfo").html(""); //清空错误信息
+    $("#errInfo2").html("");
+    $("#errInfo1").html("");
+    $("#errInfo3").html("");
+    $("#errInfo").removeClass("errStyle"); //隐藏错误信息区域
+    $("#errInfo2").removeClass("errStyle");
+    $("#errInfo1").removeClass("errStyle");
+    $("#errInfo3").removeClass("errStyle");
 	var isValid = true;
     var Pwd = $("#Pwd").val();
     var txtPwd = $("#txtPwd").val();

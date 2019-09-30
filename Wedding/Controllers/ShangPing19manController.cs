@@ -61,7 +61,7 @@ namespace Wedding.Controllers
         {
             if (Session["UserName"] != null)
             {
-                var shangpin = db.ShangPin.Find(id);
+                var shangpin = db.Prouduct.Find(id);
                 return View(shangpin);
             }
             else
@@ -70,33 +70,7 @@ namespace Wedding.Controllers
             }
 
         }
-        [HttpPost]
-        public ActionResult PingJia(FormCollection collection)
-        {
-            if (ModelState.IsValid)
-            {
-                if (collection["s"] == null || collection["s"] == "")
-                {
-                    return Content("<script>alert('请输入评论内容');window.open ('" + Url.Content("#") + "' ,'_self')</script>");
-                }
-                else
-                {
-                    PingJia pingjia = new PingJia();
-                    pingjia.TuPian = collection["picimg"];
-                    pingjia.DateTime = DateTime.Now;
-                    pingjia.NeiRong = collection["s"];
-                    db.PingJia.Add(pingjia);
-                    db.SaveChanges();
-                    //return Content(collection["picimg"]);
-                    return Content("<script>alert('评价成功，感谢');window.open ('" + Url.Content("~/ShangPing19man/LISTHE") + "' ,'_self')</script>");
-                }
-            }
-            else
-            {
-                return Content("<script>alert('评价失败');window.open ('" + Url.Content("#") + "' ,'_self')</script>");
-            }
-
-        }
+      
         public ActionResult Uploadfile()
         {
             //上传文件
@@ -116,7 +90,7 @@ namespace Wedding.Controllers
         }
         public ActionResult List(int id,int? page)
         {
-            var ss2 = from s in db.ShangPin.OrderBy(p => p.ProuductId).Where(p => p.LeiBieId ==id) select s;
+            var ss2 = from s in db.Prouduct.OrderBy(p => p.ProuductId).Where(p => p.LeiBieId ==id) select s;
             int pageNumber = page ?? 1;
             //第几页，有值就为值，没值就唯1；
             int pageSize = 24;
@@ -125,7 +99,7 @@ namespace Wedding.Controllers
         }
         public ActionResult LISTHE(int? page )
         {
-            var ss2 = from s in db.ShangPin.OrderBy(p => p.ProuductId) select s;
+            var ss2 = from s in db.Prouduct.OrderBy(p => p.ProuductId) select s;
             int pageNumber = page ?? 1;
             //第几页，有值就为值，没值就唯1；
             int pageSize = 24;
