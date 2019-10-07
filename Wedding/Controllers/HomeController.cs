@@ -52,13 +52,13 @@ namespace Wedding.Controllers
         }
 
 
-        public ActionResult Serch(FormCollection form,  int? page,string serch="")
+        public ActionResult Serch(FormCollection form, int? page, string serch = "")
         {
             ViewBag.SearchText = form["s"]; ViewBag.retu = "你搜索的结果:";
             string sText = "";
-            if (form["s"]!=null)
+            if (form["s"] != null)
             {
-                 sText = form["s"].Trim();
+                sText = form["s"].Trim();
             }
             if (!string.IsNullOrEmpty(serch))
             {
@@ -91,27 +91,54 @@ namespace Wedding.Controllers
         }
         public ActionResult XiangQing(int id)
         {
+            
             var hunsha = db.Prouduct.Find(id);
             return View(hunsha);
         }
-        public ActionResult LiJiGouMai(FormCollection form)
+        public ActionResult LiJiGouMai(int ProuductId, int Count, decimal Price)
         {
-           
+
             if (Session["UserName"] != null)
             {
-                if (form!=null)
-                {
 
+                ViewBag.Count = Count;
+                ViewBag.Total = Price;
 
-                    ViewBag.tishi = "订单已生成";
-
-                }
-                var hunsha = db.Prouduct.Find(id);
+                var hunsha = db.Prouduct.Find(ProuductId);
                 return View(hunsha);
             }
             else
                 return RedirectToAction("Login", "Acount");
 
+        }
+        [HttpPost]
+        public ActionResult CreateOrder(FormCollection form)
+        {
+            var user = db.User.Find(Session["UserId"]);
+            try
+            {
+                Order order = new Order();
+                order.OrderDate = DateTime.Now;
+                order.OrderId = System.Guid.NewGuid().ToString();
+                order.Total = Convert.ToDecimal(form["total"]);
+                order.Username = Session["UserName"].ToString();
+                order.Count = Convert.ToInt32(form["count"]);
+
+                order.Address = form["dizhi"];
+                order.Email = user.Email.Trim();
+                db.Order.Add(order);
+                db.SaveChanges();
+                return Content("<script>alert('生成订单成功！');window.open ('"
+               + Url.Content("~/Home/Index") + "' ,'_self')</script>");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
+           
+          
         }
         [ChildActionOnly]
         public ActionResult Hunche(int? page)

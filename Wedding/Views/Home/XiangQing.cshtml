@@ -15,25 +15,33 @@
     Layout = null;
 }
 
+
+
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <script type="text/javascript" src="~/Scripts/jquery-1.11.1.min.js"></script>
 <script>
-    $(function () {
 
+
+    $(function () {
+        $("#total").html("@Model.Price");
         $(".add").click(function () {
             var t = $(this).parent().find('input[class*=text_box]');
             t.val(parseInt(t.val()) + 1)
+         
             setTotal();
         })
         $(".min").click(function () {
             var t = $(this).parent().find('input[class*=text_box]');
             t.val(parseInt(t.val()) - 1)
+           
             if (parseInt(t.val()) < 0) {
                 t.val(0);
+               
             }
+            
             setTotal();
         })
 
@@ -41,18 +49,30 @@
             var s = 0;
             s += parseInt($(".text_box").val()) * parseFloat($(".price").text());
             $("#total").html(s.toFixed(2));
+           
         }
 
-        /* setTotal();  */
+       
 
-    })</script>
+    })
+    function test() {
+        var count = $(".text_box").val();
+        var total = $("#total").text();
+        var str = "@Url.Action("LiJiGouMai", "Home")" + "?ProuductId=" + "@Model.ProuductId" + "&Count=" + count + "&Price=" + total;
+       
+     window.location.href = str;
+            @*alert("a");
+            $.ajax({ url: "@Url.Action("LiJiGouMai", "Home")" + "?ProuductId=" + "@Model.ProuductId" + "&Count=" + $(this).parent().find('input[class*=text_box]').val() + "&Price=" + $(this).parent().find('label[name*=total]').val(), async: false });*@
+
+    }
+</script>
 <div class="wrap">
     <div class="header">
 
         <div class="header_top">
             <div class="account_desc">
                 <ul>
-                    <li><a href="#">你好，欢迎来到花儿与绿叶！</a></li>
+                  
                     @if (Session["UserName"] != null)
                     {
                         string Username = Convert.ToString(Session["UserName"]);
@@ -140,12 +160,11 @@
                             </div>
                         </li>
                     </ul>
-                    @using (Html.BeginForm("LiJiGouMai", "Home", FormMethod.Post, new { }))
-                    {
+                    
                         <div style="height:50px"></div>
 
                         <div id="" style="height:30px">
-                            数量 ：<input class="min" name="" type="button" value="-" />
+                            数量 ：<input class="min" name="" type="button" value="-" style="border:1px" />
                             <input class="text_box" name="count" type="text" value="1" style="width:4%" />
                             <input class="add" name="" type="button" value="+" />
                         </div>
@@ -153,12 +172,15 @@
                             <p>总价：<label id="total" name="total"></label></p>
                         </div>
                         <div class="tb-btn-add" style="float:left;width:120px;height:40px;padding-bottom:10px;padding-right:10px">
+                          
+                            <a class="regBtn" value="" onclick="test();">
+                                立即购买
+                            </a>
+                              
 
-                            <input class="regBtn" type="submit" value="立即购买" />
+</div>
 
-                        </div>
-
-                    }
+                  
                 </div>
 
             </div>
@@ -175,7 +197,7 @@
 
     <div class="clear"></div>
     <div class="copy_right">
-        <p>Copyright &copy; 2018.CCIT Wedding.</p>
+        <p> Flowers Sales 2019</p>
     </div>
 </div>
 <link href="~/Content/style.css" rel="stylesheet" />

@@ -381,7 +381,6 @@
     <Content Include="Views\Home\LeiBie.cshtml" />
     <Content Include="Views\CheckOut\AddToOrd.cshtml" />
     <Content Include="Views\Home\LUNbo.cshtml" />
-    <Content Include="Views\WebMan19\Index.cshtml" />
     <Content Include="Views\WebMan19\Edit.cshtml" />
     <Content Include="Views\WebMan19\Details.cshtml" />
     <Content Include="Views\WebMan19\Create.cshtml" />
@@ -402,6 +401,7 @@
     <Content Include="Views\Home\TypeToProuduct.cshtml" />
     <Content Include="Views\Home\AllProuduct.cshtml" />
     <Content Include="Views\ShangPing19man\List.cshtml" />
+    <Content Include="Views\WebMan19\Index.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -447,9 +447,8 @@
     <Compile Include="Models\LeiBie.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Prouduct.cs" />
     <Compile Include="Models\SampleData.cs" />
-    <Compile Include="Models\ShangPin.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Validationid.cs" />
     <Compile Include="Models\WeddingEntity.cs" />

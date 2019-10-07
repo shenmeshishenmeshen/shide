@@ -59,9 +59,9 @@
             document.getElementById("dizhi").value = str3;
             alert("地址提交成功！")
         });
-        $(".THElst").click(function () {
-            alert('添加订单成功！'); window.open("localhost:52867/ShangPing19man/LISTHE", "_self");
-        });
+        //$(".THElst").click(function () {
+        //    alert('添加订单成功！'); window.open("localhost:52867/ShangPing19man/LISTHE", "_self");
+        //});
     });
 </script>
 <title>订单</title>
@@ -71,7 +71,7 @@
         <div class="header_top">
             <div class="account_desc">
                 <ul>
-                    <li><a href="#">你好，欢迎来到花儿与绿叶！</a></li>
+                
                     @if (Session["UserName"] != null)
                     {
                         string Username = Convert.ToString(Session["UserName"]);
@@ -111,7 +111,7 @@
         <div class="clear"></div>
     </div>
     <div style="width:100px"></div>
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("CreateOrder", "Home", FormMethod.Post))
     {
 
 
@@ -159,7 +159,7 @@
                                 ￥<span id="dj">@Model.Price</span>
                             </td>
                             <td id="item-count" width="150px" style="text-align:center;">
-                                <input id="shu" style="background-color:#CCC; width:41px; height:25px; text-align:center;" type="text" value="1" readonly />
+                                <input id="shu" style="background-color:#CCC; width:41px; height:25px; text-align:center;" type="text" value="@ViewBag.Count" readonly />
                             </td>
 
                         </tr>
@@ -173,13 +173,16 @@
             </div>
             <div class="submit">
                 <div class="submit-form">
-                    <div class="write">实付款：@Model.Price</div>
-                    <div class="write"> 寄送至： <input id="dizhi" style="background-color:#CCC; width:41px; height:25px; text-align:center;" type="text" value="" readonly /></div>
+                    <div class="write">实付款：@ViewBag.Total</div>
+                    <input type="hidden" value="@ViewBag.Total" name="total" />
+                    <input type="hidden" value="@ViewBag.Count" name="count" />
+                    <input type="hidden" value="@Model.ProuductId" name="id" />
+                    <div class="write"> 寄送至： <input id="dizhi" name="dizhi" style="background-color:#CCC; width:41px; height:25px; text-align:center;" type="text" value="" readonly /></div>
                     <div class="write2">收货人：@Session["UserName"]</div>
                 </div>
                 <div class="clear"></div>
                 <a href="#" class="THElst">
-                    <input type="button" value="提交订单" class="submit-button">
+                    <input type="submit" value="提交订单" class="submit-button">
                 </a>
             </div>
         </div>

@@ -15,7 +15,6 @@ namespace Wedding.Models
         public virtual DbSet<LeiBie> LeiBie { get; set; }
         public virtual DbSet<Member> Member { get; set; }
         public virtual DbSet<Order> Order { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetail { get; set; }
         public virtual DbSet<Prouduct> Prouduct { get; set; }
         public virtual DbSet<User> User { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -45,24 +44,10 @@ namespace Wedding.Models
                 .Property(e => e.Total)
                 .HasPrecision(10, 2);
 
-            modelBuilder.Entity<Order>()
-                .HasMany(e => e.OrderDetail)
-                .WithRequired(e => e.Order)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<OrderDetail>()
-                .Property(e => e.UnitPrice)
-                .HasPrecision(10, 2);
 
             modelBuilder.Entity<Prouduct>()
                 .Property(e => e.Price)
                 .HasPrecision(10, 2);
-
-            modelBuilder.Entity<Prouduct>()
-                .HasMany(e => e.OrderDetail)
-                .WithRequired(e => e.ShangPin)
-                .HasForeignKey(e => e.AlbumId)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()
                 .Property(e => e.UserName)

@@ -9,11 +9,7 @@ namespace Wedding.Models
     [Table("Prouduct")]
     public partial class Prouduct
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Prouduct()
-        {
-            OrderDetail = new HashSet<OrderDetail>();
-        }
+
 
         public int ProuductId { get; set; }
 
@@ -36,7 +32,6 @@ namespace Wedding.Models
 
         public virtual LeiBie LeiBie { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
+
     }
 }
