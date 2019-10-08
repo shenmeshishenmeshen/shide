@@ -86,7 +86,7 @@ namespace Wedding.Controllers
         }
         public ActionResult UserDetail(string id)
         {
-            var UserD = db.User.Where(g => g.UserName == id);
+            var UserD = db.User.FirstOrDefault(g => g.UserName == id);
             return View(UserD);
         }
 

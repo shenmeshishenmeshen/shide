@@ -373,7 +373,6 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Views\Acount\Reg.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
-    <Content Include="Views\Home\Hunche.cshtml" />
     <Content Include="Views\Acount\UserDetail.cshtml" />
     <Content Include="Views\Acount\LoginMan.cshtml" />
     <Content Include="Views\Home\XiangQing.cshtml" />
@@ -402,6 +401,7 @@
     <Content Include="Views\Home\AllProuduct.cshtml" />
     <Content Include="Views\ShangPing19man\List.cshtml" />
     <Content Include="Views\WebMan19\Index.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -438,6 +438,7 @@
     <Compile Include="Controllers\CheckOutController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ShangPing19manController.cs" />
     <Compile Include="Controllers\UseMan19Controller.cs" />
     <Compile Include="Controllers\WebMan19Controller.cs" />
@@ -453,6 +454,7 @@
     <Compile Include="Models\Validationid.cs" />
     <Compile Include="Models\WeddingEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

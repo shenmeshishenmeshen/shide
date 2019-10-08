@@ -25,5 +25,8 @@ namespace Wedding.Models
 
         public int  Count { get; set; }
 
+        public int ProuductId { get; set; }
+
+        public int LeiBieId { get; set; }
     }
 }

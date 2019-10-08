@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Wedding.Models.User>
+﻿@model Wedding.Models.User
 
 @{
     Layout = null;
@@ -19,7 +19,6 @@
         <div class="header_top">
             <div class="account_desc">
                 <ul>
-                    <li><a href="#">你好，欢迎来到花儿与绿叶！</a></li>
                     @if (Session["UserName"] != null)
                     {
                         string Username = Convert.ToString(Session["UserName"]);
@@ -37,35 +36,7 @@
                     }
                 </ul>
             </div>
-          
-            <script type="text/javascript">
-                function DropDown(el) {
-                    this.dd = el;
-                    this.initEvents();
-                }
-                DropDown.prototype = {
-                    initEvents: function () {
-                        var obj = this;
 
-                        obj.dd.on('click', function (event) {
-                            $(this).toggleClass('active');
-                            event.stopPropagation();
-                        });
-                    }
-                }
-
-                $(function () {
-
-                    var dd = new DropDown($('#dd'));
-
-                    $(document).click(function () {
-                        // all dropdowns
-                        $('.wrapper-dropdown-2').removeClass('active');
-                    });
-
-                });
-
-            </script>
             <div class="clear"></div>
         </div>
         <uc1:Menu runat="server" ID="Menu" />
@@ -90,12 +61,11 @@
 
             <div style="width:200px;float:left"></div>
             <div class="tb-item-info-r" data-spm="iteminfo" style="width:518px;height:548px;float:left;padding-left:400px">
-                @foreach (var item in Model)
-                {
+               
 
                     <h2>
                         <span>
-                            用户名: @item.UserName
+                            用户名: @Model.UserName
                         </span>
                     </h2>
 
@@ -103,7 +73,7 @@
                     <div id="J_Banner" class="tb-banner" style="height:50px"></div>
                     <div>
                         <h2>
-                            <span>注册时间:@item.RegTime</span>
+                            <span>注册时间:@Model.RegTime</span>
                         </h2>
                     </div>
 
@@ -114,7 +84,7 @@
 
 
                         <h2>
-                            <span>性别:@item.Sex</span>
+                            <span>性别:@Model.Sex</span>
                         </h2>
 
                     </div>
@@ -123,29 +93,19 @@
                     <div id="" style="height:50px"></div>
                     <div>
                         <h2>
-                            <span>邮箱:@item.Email</span>
+                            <span>邮箱:@Model.Email</span>
                         </h2>
                     </div>
 
                     <div id="" style="height:50px"></div>
                     <div>
                         <h2>
-                            <span>您是第:@item.UserID 号用户</span>
+                            <span>您是第:@Model.UserID 号用户</span>
                         </h2>
                     </div>
 
 
                     <div id="" style="height:30px"></div>
-                    @*<dl id="J_DlChoice" class="tb-choice tb-clear">
-                            <dt>请选择：暂时无其他色号</dt>
-                            <div id="" style="height:30px"></div>
-                            <em>颜色分类：</em>
-                        </dl>*@
-
-
-
-                }
-
 
 
                 <div class="tb-btn-add" style="float:left;padding-bottom:10px;padding-right:10px">

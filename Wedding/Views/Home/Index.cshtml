@@ -58,6 +58,7 @@
                     <ul style="margin-left:43%">
                         <li class="active">@Html.ActionLink("主页", "Index", "Home")</li>
                         <li>@Html.ActionLink("最新商品", "NewProd", "Home")</li>
+                        <li>@Html.ActionLink("查看订单", "Index", "Order",new {userName= Session["UserName"] },new { })</li>
                         <div class="clear"></div>
                     </ul>
                 </div>
@@ -90,11 +91,17 @@
                         @if (Session["UserName"] != null)
                         {
                             string Username = Convert.ToString(Session["UserName"]);
+                            <a href="@Url.Action("UserDetail", "Acount",new {id = Username  })">
 
-                            <a href="@Url.Action("UserDetail","Acount",new {id = Username  })">@Username</a>
+                                &nbsp;&nbsp;&nbsp; <img width="80px" height="80px" src="~/Content/头像.jpg" />
+                            </a>
+                          
+                            <p>
+                                &nbsp; &nbsp;&nbsp;&nbsp;   <a href="@Url.Action("UserDetail","Acount",new {id = Username  })">@Username</a>
 
 
-                            @Html.ActionLink("注销", "UserZhuXiao", "Acount", new { }, new { })
+                                @Html.ActionLink("注销", "UserZhuXiao", "Acount", new { }, new { })
+                            </p>
 
                         }
                         else
@@ -128,7 +135,7 @@
     <div class="main">
 
         @{Html.RenderAction("TypeToProuduct", "Home");}
- 
+
     </div>
     <div class="clear"></div>
     <div class="footer">

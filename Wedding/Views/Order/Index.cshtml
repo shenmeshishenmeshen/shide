@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Wedding.ViewModels.OrderViewModel>
+
+@{
+    Layout = null;
+}
+
+<table border="1" style="text-align:left;width:100%;margin-top:20px;">
+
+    <tr style="width:1228px;">
+        <th style="width:550px;text-align:center;">
+           时间
+        </th>
+
+        <th style="width:150px;">
+            产品名
+        </th>
+        <th style="width:100px;text-align:center;">
+            单价
+        </th>
+        <th style="width:300px;">
+            数量
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="row-" style="border:1px solid #000; width:1228px;height:129px;background-color:#fff;">
+            <td style="width:550px; height:129px">
+
+                <h5>
+                    <img style="margin-left:100px" width="80px" height="80px" src="@item.ShangPin.TuPian" />
+                    
+                </h5>
+            </td>
+
+            <td width="100px">
+                ￥<span id="dj-">@item.ShangPin.Price</span>
+            </td>
+            <td id="item-count-@item.RecordId" width="150px" style="text-align:center;">
+                <a href="#" data-id="" class="jian">-</a><input id="shu-@" style="background-color:#CCC; width:41px; height:25px; text-align:center;" type="text" value="@item.Count" readonly /><a href="#" data-id="@item.RecordId" class="JIA">+</a>
+            </td>
+            <td style="text-align:center">
+                <a href="#" class="RmoveLink" data-id="">移除购物车</a>
+            </td>
+
+        </tr>
+        <tr style="height:10px;">
+            <td></td>
+        </tr>
+    }
+    @*<tr style="border:1px">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>*@
+</table>
+<div id="dtop">
+
+    <a href="javascript:;">
+
+        <img width="49px" height="45px" src="~/fonts/713efe21fbebae1158ced124199ded18.png" title="返回顶部" />
+
+    </a>
+</div>
+<div class="tota">
+    <span style="margin-right:60px">合计（不含运费）：</span>  ￥<span id="cart-total">@Model.CartTotal</span>
+    <div style="background-color:#f8f8a7;width:70px;height:50px;float:right;margin-top:15px;margin-right:20px"><span style="color:#ff6a00;font-size:1.5em;line-height:50px">@Html.ActionLink("结算", "AddToOrd", "CheckOut")</span></div>
+</div>
+</div>
+<link href="~/Content/style.css" rel="stylesheet" />
+

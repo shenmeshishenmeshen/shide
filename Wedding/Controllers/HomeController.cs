@@ -123,7 +123,8 @@ namespace Wedding.Controllers
                 order.Total = Convert.ToDecimal(form["total"]);
                 order.Username = Session["UserName"].ToString();
                 order.Count = Convert.ToInt32(form["count"]);
-
+                order.ProuductId = Convert.ToInt32(form["id"]);
+                order.LeiBieId = Convert.ToInt32(form["LeiBieid"]);
                 order.Address = form["dizhi"];
                 order.Email = user.Email.Trim();
                 db.Order.Add(order);
@@ -139,16 +140,6 @@ namespace Wedding.Controllers
           
            
           
-        }
-        [ChildActionOnly]
-        public ActionResult Hunche(int? page)
-        {
-            var hunche = from s in db.Prouduct where s.LeiBieId == 4 orderby s.ProuductId descending select s;
-            int pageNumber = page ?? 1;
-            //第几页，有值就为值，没值就唯1；
-            int pageSize = 24;
-            IPagedList<Prouduct> pagedList = hunche.ToPagedList(pageNumber, pageSize);
-            return View(pagedList);
         }
         [ChildActionOnly]
         public ActionResult baihe()
