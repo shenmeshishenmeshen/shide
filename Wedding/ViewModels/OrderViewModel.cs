@@ -20,4 +20,10 @@ namespace Wedding.ViewModels
         public string   OrderId { get; set; }
 
     }
+    public class OrderTotal
+    {
+        public decimal Total { get; set; }
+
+        public List<OrderViewModel>  OrderViewModels { get; set; }
+    }
 }

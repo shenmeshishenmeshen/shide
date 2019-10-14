@@ -19,7 +19,7 @@ namespace Wedding.Controllers
                 var query = (from t1 in db.Order
                              join t2 in db.LeiBie
                              on t1.LeiBieId equals t2.LeiBieId
-
+                             where t1.Username==userName
                              select new OrderViewModel
                              {
                                  OrderDate = t1.OrderDate,
@@ -29,7 +29,13 @@ namespace Wedding.Controllers
                                  Count = t1.Count,
                                  Name = t2.Name
                              }).ToList();
-                return View(query);
+                var total = db.Order.Where(a => a.Username == userName).Sum(a => a.Total);
+                OrderTotal orderTotal = new OrderTotal();
+                orderTotal.OrderViewModels = query;
+                orderTotal.Total = total;
+                return View(orderTotal);
+
+
             }
             else
                 return RedirectToAction("Login", "Acount");
