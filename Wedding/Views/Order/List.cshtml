@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Wedding.ViewModels.OrderMan>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>订单列表</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            订单编号
+        </th>
+        <th>
+            时间:
+        </th>
+        <th>
+            数量
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Tupian)
+        </th>
+        <th>
+            名称
+        </th>
+        <th>
+            用户
+        </th>
+        <th>
+            总价
+        </th>
+
+        <th>
+          类别
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Count)
+    </td>
+    <td>
+        <img style="margin-left:40%;width:80px;height:80px" src="@item.Tupian" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Total)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LeiBie)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id=item.OrderId}) |
+        @Html.ActionLink("Details", "Details", new {id=item.OrderId}) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
+    </td>
+</tr>
+}
+
+</table>

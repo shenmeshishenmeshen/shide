@@ -1,4 +1,4 @@
-﻿@model Wedding.Models.ShangPin
+﻿@model Wedding.Models.Prouduct
 
 @{
     ViewBag.Title = "Create";
@@ -8,8 +8,8 @@
 <h4>商品</h4>
 <script src="~/Scripts/jquery.form.js"></script>
 <form id="fm1" method="post">
-    <input type="file" id="btnfile" name="btnfile" value="提交" />
-    <input type="button" id="btn2" value="上传" />
+    <input type="file" id="btnfile" name="btnfile" value="提交"/>
+    <input type="button" id="btn2" value="上传"  />
 
 </form>
 <div id="divimg">
@@ -18,8 +18,9 @@
 <script type="text/javascript">
     $(function () {
         $("#btn2").click(function () {
+            var id = $(".form-control").val();
             $("#fm1").ajaxSubmit({
-                url: '@Url.Action("Uploadfile")',
+                url: '@Url.Action("Uploadfile")'+'?num='+id,
                 type: 'post',
                 success: function (data) {
                     data = data.replace('<PRE>', '').replace('</PRE>', '');
@@ -32,53 +33,63 @@
             });
         });
     });
+    function test() {
+        $("#btnfile").removeAttr('disabled');
+          $("#btn2").removeAttr('disabled');
+    }
 </script>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+<div class="form-horizontal">
 
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <label class="control-label col-md-2">类别：</label>
-            <div class="col-md-10">
-                @Html.DropDownList("LeiBieId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.LeiBieId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">介绍：</label>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">单价：</label>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">图片：</label>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TuPian, new { htmlAttributes = new { @class = "form-control", id = "picimg" } })
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="control-label col-md-2">类别：</label>
+        <div class="col-md-10">
+            @Html.DropDownList("LeiBieId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LeiBieId, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">介绍：</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">单价：</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">图片：</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TuPian, new { htmlAttributes = new { @class = "form-control", id = "picimg" } })
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">新品：</label>
+        <div class="col-md-10">
+            @Html.DropDownList("IsNew", null, htmlAttributes: new { @class = "form-control" })
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
 <div>

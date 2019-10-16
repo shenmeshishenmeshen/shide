@@ -19,9 +19,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("商品管理主页", "Index", "WebMan19", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("资讯管理", "Index", "News19", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("用户管理", "Index", "UseMan19", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("在线回复", "SevView", "WebMan19", new { area = "" }, new { @class = "navbar-brand" })               
+                @Html.ActionLink("订单管理", "List", "Order", new { area = "" }, new { @class = "navbar-brand" })
                 <a href="@Url.Action("Index","Home",new { id=2})">
 
                     <img src="~/fonts/LOGE.png" />
@@ -38,7 +37,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - 花儿与绿叶</p>
+            <p>&copy; @DateTime.Now.Year</p>
         </footer>
     </div>
 

@@ -28,4 +28,9 @@ namespace Wedding.ViewModels
 
         public List<OrderViewModel>  OrderViewModels { get; set; }
     }
+
+    public class OrderMan: OrderViewModel
+    {
+        public string  LeiBie { get; set; }
+    }
 }

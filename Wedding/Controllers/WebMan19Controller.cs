@@ -18,13 +18,42 @@ namespace Wedding.Controllers
             var he = db.Prouduct.ToList();
             return View(he);
         }
-        public ActionResult Uploadfile()
+        public ActionResult Uploadfile(int num)
         {
+            string path="";
+            switch (num)
+            {
+                case 1:path = "/Content/Flowers/";
+                    break;
+                case 2:
+                    path = "/Content/yujin/";
+                    break;
+                case 3:
+                    path = "/Content/Lily/";
+                    break;
+
+                case 4:
+                    path = "/Content/Complex/";
+                    break;
+                case 5:
+                    path = "/Content/Meaty/";
+                    break;
+                case 6:
+                    path = "/Content/fruitTrees/";
+                    break;
+                case 7:
+                    path = "/Content/green/";
+                    break;
+                case 8:
+                    path = "/Content/Custom/";
+                    break;
+                default:;
+                    break;
+            }
             //上传文件
             HttpPostedFileBase img = Request.Files["btnfile"];
             string s = img.FileName;
             string fileExtension = Path.GetExtension(s);
-            string path = "/Content/ShangPinIma/";
             if (Directory.Exists(Server.MapPath(path)) == false)//如果不存在就创建file文件夹
             {
                 Directory.CreateDirectory(Server.MapPath(path));
@@ -65,7 +94,13 @@ namespace Wedding.Controllers
         public ActionResult Create()
         {
             Prouduct shangPin = new Prouduct();
+            var SelectItems = new List<dynamic>(){
+        new { IsNew ="Y", name="是"},
+        new { IsNew ="N", name="否"}
+    };
             ViewBag.LeiBieId = new SelectList(db.LeiBie, "LeiBieId", "Name", shangPin.LeiBieId);
+            ViewBag.IsNew= new SelectList(SelectItems, "IsNew", "name", shangPin.IsNew);
+
             return View();
         }
         [HttpPost]
@@ -89,22 +124,22 @@ namespace Wedding.Controllers
 
             return View(shangPin);
         }
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    var shangPin = db.ShangPin.Find(id);
-        //    var sum = (from r in db.Cart where r.ShangPinId == id select r).FirstOrDefault();
-        //    if (sum != null)
-        //        return Content("<script>alert('该商品被添加到用户购物车里，暂不能删除！');window.open ('"
-        //            + Url.Content("~/WebMan19/Index") + "' ,'_self')</script>");
-        //    else
-        //    {
-        //        db.ShangPin.Remove(shangPin); db.SaveChanges();
-        //        return Content("<script>alert('删除成功！');window.open ('"
-        //            + Url.Content("~/WebMan19/Index") + "' ,'_self')</script>");
-        //    }
-        //}
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            var shangPin = db.Prouduct.Find(id);
+            var sum = (from r in db.Order where r.ProuductId == id select r).FirstOrDefault();
+            if (sum != null)
+                return Content("<script>alert('该商品已被添加到订单，暂不能删除！');window.open ('"
+                    + Url.Content("~/WebMan19/Index") + "' ,'_self')</script>");
+            else
+            {
+                db.Prouduct.Remove(shangPin); db.SaveChanges();
+                return Content("<script>alert('删除成功！');window.open ('"
+                    + Url.Content("~/WebMan19/Index") + "' ,'_self')</script>");
+            }
+        }
         //public ActionResult SevView()
         //{
         //    int ss1;
