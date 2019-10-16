@@ -49,6 +49,8 @@ namespace Wedding.Controllers
             var query = (from t1 in db.Order
                          join t2 in db.Prouduct
                          on t1.ProuductId equals t2.ProuductId
+                         join t3 in db.User
+                         on t1.Username equals t3.UserName
                          select new OrderMan
                          {
                              OrderDate = t1.OrderDate,
@@ -58,14 +60,34 @@ namespace Wedding.Controllers
                              Count = t1.Count,
                              Name = t2.Varieties,
                              Tupian = t2.TuPian,
-                             LeiBie=t2.LeiBie.Name
+                             LeiBie=t2.LeiBie.Name,
+                             Email = t3.Email,
+                             Address = t1.Address
                          }).ToList();
             return View(query);
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            var album = db.Order.Find(id);
+            var album = (from t1 in db.Order
+                         join t2 in db.Prouduct
+                         on t1.ProuductId equals t2.ProuductId
+                         join t3 in db.User
+                         on t1.Username equals t3.UserName
+                         where t1.OrderId == id
+                         select new OrderMan
+                         {
+                             OrderDate = t1.OrderDate,
+                             OrderId = t1.OrderId,
+                             Total = t1.Total,
+                             UserName = t1.Username,
+                             Count = t1.Count,
+                             Name = t2.Varieties,
+                             Tupian = t2.TuPian,
+                             LeiBie = t2.LeiBie.Name,
+                             Email=t3.Email,
+                             Address=t1.Address
+                         }).ToList(); ;
             return View(album);
         }
         [HttpPost]
@@ -75,11 +97,7 @@ namespace Wedding.Controllers
             var cc = db.Order.Find(id);
             if (ModelState.IsValid)
             {
-                string jiaqian = form["Price"];
-                string jieshao = form["Title"];
-                string tupian = form["TuPian"];
-                int leibeiID = Convert.ToInt32(form["LeiBieId"]);
-                cc.Price = Convert.ToDecimal(jiaqian); 
+                cc.Address = form["id"]; 
                 cc.Title = jieshao;
                 cc.TuPian = tupian; 
                 cc.LeiBieId = leibeiID;
