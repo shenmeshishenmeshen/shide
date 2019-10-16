@@ -18,8 +18,12 @@
 </div>
 <table border="1" style="text-align:left;width:100%;margin-top:20px;">
 
+    
     <tr style="width:1228px;">
-        <th style="width:50%;text-align:center;">
+        <th style="width:30%;text-align:center">
+            图片
+            </th>
+        <th style="width:30%;text-align:center;">
             时间
         </th>
 
@@ -29,7 +33,7 @@
         <th style="width:10%;text-align:center;">
             总价
         </th>
-        <th style="width:45%;">
+        <th style="width:15%;">
             数量
         </th>
     </tr>
@@ -37,6 +41,9 @@
     @foreach (var item in Model.OrderViewModels)
     {
         <tr id="row-" style="border:1px solid #000; width:1228px;height:129px;background-color:#fff;">
+            <td style="width:20%">
+                <img style="margin-left:40%;width:80px;height:80px" src="@item.Tupian" />
+            </td>
             <td style="width:550px; height:129px;text-align:center">
 
                 <h5>

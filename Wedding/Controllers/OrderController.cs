@@ -17,8 +17,8 @@ namespace Wedding.Controllers
             if (userName != null)
             {
                 var query = (from t1 in db.Order
-                             join t2 in db.LeiBie
-                             on t1.LeiBieId equals t2.LeiBieId
+                             join t2 in db.Prouduct
+                             on t1.ProuductId equals t2.ProuductId
                              where t1.Username==userName
                              select new OrderViewModel
                              {
@@ -27,7 +27,9 @@ namespace Wedding.Controllers
                                  Total = t1.Total,
                                  UserName = t1.Username,
                                  Count = t1.Count,
-                                 Name = t2.Name
+                                 Name = t2.Varieties,
+                                 Tupian =t2.TuPian
+                                 
                              }).ToList();
                 var total = db.Order.Where(a => a.Username == userName).Sum(a => a.Total);
                 OrderTotal orderTotal = new OrderTotal();

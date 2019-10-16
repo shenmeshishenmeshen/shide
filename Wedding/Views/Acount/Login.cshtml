@@ -48,7 +48,7 @@
 
             @using (Html.BeginForm("Serch", "Home", FormMethod.Post, new { }))
             {
-                @Html.TextBox("s", null, new { @class = "text", placeholder = "婚纱 西装 紫罗兰韵白" })
+                @Html.TextBox("s", null, new { @class = "text", placeholder = "玫瑰 康乃馨 郁金香" })
 
                 <button id="btn" type="submit" class="SearchButton"><i class="iconfont" style="color:#CCC"><img src="~/fonts/search.png"></i></button>
             }
@@ -61,7 +61,7 @@
         <div class="header_top">
             <div class="account_desc">
                 <ul>
-                    <li><a href="#">你好，欢迎来到花儿与绿叶！</a></li>
+                    <li><a href="#">欢迎光临！</a></li>
                     @if (Session["UserName"] != null)
                     {
                         string Username = Convert.ToString(Session["UserName"]);

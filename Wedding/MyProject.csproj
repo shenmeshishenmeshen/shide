@@ -330,12 +330,12 @@
     <Content Include="Content\图片1.png" />
     <Content Include="Content\头像.jpg" />
     <Content Include="Content\特洛耶·希文.jpg" />
-    <Content Include="fonts\29.jpg" />
+    <Content Include="Controllers\5.gif" />
+    <Content Include="fonts\login_left.gif" />
     <Content Include="fonts\713efe21fbebae1158ced124199ded18.png" />
     <Content Include="fonts\dribbble.png" />
     <Content Include="fonts\facebook.png" />
     <Content Include="fonts\LOGE.png" />
-    <Content Include="fonts\login_left.gif" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\search.png" />
     <Content Include="fonts\图标.png" />
@@ -402,6 +402,7 @@
     <Content Include="Views\ShangPing19man\List.cshtml" />
     <Content Include="Views\WebMan19\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\ShangPing19man\LISTHE.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

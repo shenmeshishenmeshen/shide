@@ -19,6 +19,8 @@ namespace Wedding.ViewModels
 
         public string   OrderId { get; set; }
 
+        public string  Tupian { get; set; }
+
     }
     public class OrderTotal
     {
