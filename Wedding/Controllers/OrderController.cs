@@ -49,8 +49,6 @@ namespace Wedding.Controllers
             var query = (from t1 in db.Order
                          join t2 in db.Prouduct
                          on t1.ProuductId equals t2.ProuductId
-                         join t3 in db.User
-                         on t1.Username equals t3.UserName
                          select new OrderMan
                          {
                              OrderDate = t1.OrderDate,
@@ -61,7 +59,7 @@ namespace Wedding.Controllers
                              Name = t2.Varieties,
                              Tupian = t2.TuPian,
                              LeiBie=t2.LeiBie.Name,
-                             Email = t3.Email,
+                             Email = t1.Email,
                              Address = t1.Address
                          }).ToList();
             return View(query);
@@ -72,8 +70,6 @@ namespace Wedding.Controllers
             var album = (from t1 in db.Order
                          join t2 in db.Prouduct
                          on t1.ProuductId equals t2.ProuductId
-                         join t3 in db.User
-                         on t1.Username equals t3.UserName
                          where t1.OrderId == id
                          select new OrderMan
                          {
@@ -85,22 +81,21 @@ namespace Wedding.Controllers
                              Name = t2.Varieties,
                              Tupian = t2.TuPian,
                              LeiBie = t2.LeiBie.Name,
-                             Email=t3.Email,
+                             Email=t1.Email,
                              Address=t1.Address
-                         }).ToList(); ;
+                         }).FirstOrDefault();
             return View(album);
         }
         [HttpPost]
         public ActionResult Edit(FormCollection form)
         {
-            string   id = form["id"]; 
+            string   id = form["OrderId"].ToString(); 
             var cc = db.Order.Find(id);
             if (ModelState.IsValid)
             {
-                cc.Address = form["id"]; 
-                cc.Title = jieshao;
-                cc.TuPian = tupian; 
-                cc.LeiBieId = leibeiID;
+                cc.Address = form["Address"].ToString();
+                cc.Email = form["Email"].ToString();
+
                 db.SaveChanges();
                 return Content("<script>alert('修改成功！');window.open ('"
                     + Url.Content("~/Order/List") + "' ,'_self')</script>");

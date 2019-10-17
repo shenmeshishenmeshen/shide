@@ -13,7 +13,7 @@
             订单编号
         </th>
         <th>
-            时间:
+            时间
         </th>
         <th>
             数量
@@ -33,7 +33,13 @@
         </th>
 
         <th>
-          类别
+            类别
+        </th>
+        <th>
+            邮箱
+        </th>
+        <th>
+            地址
         </th>
         <th></th>
     </tr>
@@ -65,9 +71,15 @@
         @Html.DisplayFor(modelItem => item.LeiBie)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id=item.OrderId}) |
-        @Html.ActionLink("Details", "Details", new {id=item.OrderId}) |
-        @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
     </td>
 </tr>
 }
