@@ -85,15 +85,6 @@
                     </ul>
                 </div>
                 <div class="clear"></div>
-                @if (Session["UserName"] != null)
-                {
-                    <div class="cart">
-                        <a href="@Url.Action("Index", "ShoppingCart")">
-                            @{Html.RenderAction("Cart", "Home");}
-                        </a>
-                    </div>
-                }
-                <div class="clear"></div>
             </div>
             <uc1:Menu runat="server" ID="Menu" />
             <div class="header_bottom">
