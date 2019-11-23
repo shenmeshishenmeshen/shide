@@ -6,7 +6,7 @@
 	}
 .affirm,.submit{
 	
-	border:#333 1px solid;}
+	}
 .head{
 	width:100%;
 	height:30px;
@@ -22,26 +22,29 @@
 	     float:right;}
 .adress{
 	height:200px;
-	border:#333 1px solid;}
-p{ font-weight:600;
-   font-family:'宋体';
-   font-size:14px;
+    margin-left:30%;
+	}
+p{ 
+
    margin-left:8px;}
 .adress-img{
 	width:255px;
 	height:130px;
-	background:url(img/adress.png);
 	}
-.adress .adress-write{
-	                   margin-left:18px;
-					   margin-top:22px;}
+.adress .adress-write {
+    margin-left: 18px;
+    margin-top: 22px;
+    border: solid 1px #f00;
+    border-radius: 5px;
+    resize: none;
+}
 .form{
 	width:100%;
 	height:40px;
 	text-align:center;
      }
 .form td{
-		background:url(img/form.png) no-repeat 0px 28px;
+
 		font-size:14px;
 		}
 .affirm-form2{
@@ -64,11 +67,11 @@ p{ font-weight:600;
 	          }
 .submit-form .write2{
 	float:right;}
-.submit .submit-button{
-	                   width:200px;
-					   height:50px;
-					   background-color:#D70000;
-					   color:#FFF;
-					   float:right;
-					   font-size:16px;}
+.submit .submit-button {
+    width: 100px;
+    height: 30px;
+    background-color: #ffc404;
+    float: right;
+    font-size: 16px;
+}
 .clear{ clear:both;}
