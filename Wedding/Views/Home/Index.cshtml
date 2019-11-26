@@ -43,7 +43,7 @@
             <div class="form">
                 @using (Html.BeginForm("Serch", "Home", FormMethod.Post, new { }))
                 {
-                    @Html.TextBox("s", null, new { @class = "text1", placeholder = "玫瑰 康乃馨 郁金香" })
+                    @Html.TextBox("s", null, new { @class = "text1", placeholder = "玫瑰" })
 
                     <button id="btn" type="submit" class="SearchButton"><i class="iconfont" style="color:#CCC"><img src="~/fonts/search.png"></i></button>
                 }

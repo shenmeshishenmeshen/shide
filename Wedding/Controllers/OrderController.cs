@@ -31,7 +31,7 @@ namespace Wedding.Controllers
                                  Tupian = t2.TuPian
 
                              }).ToList();
-                var total = db.Order.Where(a => a.Username == userName).Sum(a => a.Total);
+                var total = query.Sum(a => a.Total);
                 OrderTotal orderTotal = new OrderTotal();
                 orderTotal.OrderViewModels = query;
                 orderTotal.Total = total;

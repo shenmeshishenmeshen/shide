@@ -117,20 +117,15 @@
 
 
         <div class="all">
-
-            <div class="pic">
-                网站图标
-                <img src="~/Content/img/buy.png" />
-            </div>
             <div class="adress">
                 <p>填写收货地址</p>
                 <div class="adress-img">
                     <form id="form1" name="form1" method="post" action="">
                         <label for="textarea"></label>
-                        <textarea name="textarea" id="textarea" cols="28" rows="5"class="adress-write"></textarea>
-                        <div id="Tjdizhi" style="background-color:#ff6a00;width:60px;cursor:pointer">
+                        <textarea name="textarea" id="textarea" cols="55" rows="7"class="adress-write"></textarea>
+                        <div id="Tjdizhi" style="background-color:#808080;width:60px;height:35px;text-align:center;cursor:pointer;">
                             <a href="#" class="Tj">
-                                <input type="button" value="使用地址" />
+                                <input type="button" value="确认地址" />
                             </a>
                         </div>
                     </form>
@@ -174,6 +169,7 @@
             </div>
             <div class="submit">
                 <div class="submit-form">
+                    <div  style="float:left;margin-left:10px">请认真核实一下信息:</div>
                     <div class="write">实付款：@ViewBag.Total</div>
                     <input type="hidden" value="@ViewBag.Total" name="total" />
                     <input type="hidden" value="@ViewBag.Count" name="count" />
@@ -183,9 +179,11 @@
                     <div class="write2">收货人：@Session["UserName"]</div>
                 </div>
                 <div class="clear"></div>
+                <div style=" margin-right:10px">
                 <a href="#" class="THElst">
                     <input type="submit" value="提交订单" class="submit-button">
                 </a>
+                    </div>
             </div>
         </div>
 

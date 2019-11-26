@@ -14,7 +14,7 @@ namespace Wedding.Models
             var User = new List<User>
             {
 
-                new User { UserName = "11",UserPwd="11",Email="36273963@qq.com",RegTime=Convert.ToDateTime("2019-12-30"),Sex="男" }
+                new User { UserName = "11",UserPwd="11",Email="Vfvfvomc@qq.com",RegTime=Convert.ToDateTime("2019-12-30"),Sex="男" }
             };
             User.ForEach(d => context.User.Add(d));
             context.SaveChanges();
