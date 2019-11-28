@@ -348,10 +348,10 @@
     <Content Include="Views\Home\baihe.cshtml" />
     <Content Include="Views\Home\TypeToProuduct.cshtml" />
     <Content Include="Views\Home\AllProuduct.cshtml" />
-    <Content Include="Views\ShangPing19man\List.cshtml" />
+    <Content Include="Views\ProuductMan\List.cshtml" />
     <Content Include="Views\WebMan19\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
-    <Content Include="Views\ShangPing19man\LISTHE.cshtml" />
+    <Content Include="Views\ProuductMan\LISTHE.cshtml" />
     <Content Include="Views\Order\List.cshtml" />
     <Content Include="Views\Order\Delete.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
@@ -392,7 +392,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\ShangPing19manController.cs" />
+    <Compile Include="Controllers\ProuductManController.cs" />
     <Compile Include="Controllers\UseMan19Controller.cs" />
     <Compile Include="Controllers\WebMan19Controller.cs" />
     <Compile Include="Global.asax.cs">

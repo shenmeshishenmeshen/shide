@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Wedding.Models.LeiBie>
-<li><h2><a href="@Url.Action("LISTHE","ShangPing19man",new { })">所有鲜花</a></h2></li>
+<li><h2><a href="@Url.Action("LISTHE","ProuductMan",new { })">所有鲜花</a></h2></li>
 @foreach (var item in Model)
 {
-    <li><h2><a href="@Url.Action("List","ShangPing19man",new { id=item.LeiBieId})">@item.Name</a></h2></li>
+    <li><h2><a href="@Url.Action("List","ProuductMan",new { id=item.LeiBieId})">@item.Name</a></h2></li>
 }

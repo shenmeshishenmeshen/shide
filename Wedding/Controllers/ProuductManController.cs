@@ -11,7 +11,7 @@ using PagedList;
 
 namespace Wedding.Controllers
 {
-    public class ShangPing19manController : Controller
+    public class ProuductManController : Controller
     {
         FlowersEntity db = new FlowersEntity();
         // GET: ShangPing19man
