@@ -8,7 +8,7 @@ namespace Wedding.Models
     public partial class FlowersEntity : DbContext
     {
         public FlowersEntity()
-            : base("name=WeddingEntity")
+            : base("name=FlowersEntity")
         {
         }
 
