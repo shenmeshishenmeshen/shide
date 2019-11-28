@@ -5,9 +5,9 @@ namespace Wedding.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class WeddingEntity : DbContext
+    public partial class FlowersEntity : DbContext
     {
-        public WeddingEntity()
+        public FlowersEntity()
             : base("name=WeddingEntity")
         {
         }

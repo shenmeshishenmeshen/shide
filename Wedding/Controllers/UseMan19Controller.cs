@@ -10,7 +10,7 @@ namespace Wedding.Controllers
 {
     public class UseMan19Controller : Controller
     {
-        WeddingEntity db = new WeddingEntity();
+        FlowersEntity db = new FlowersEntity();
         // GET: UseMan19
         public ActionResult Index()
         {

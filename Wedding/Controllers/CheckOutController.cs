@@ -15,7 +15,7 @@ namespace Wedding.Controllers
 {
     public class CheckOutController : Controller
     {
-        WeddingEntity db = new WeddingEntity();
+        FlowersEntity db = new FlowersEntity();
         const String KEY = "f8abfbc6cf7244d195a3e8891bb04837";
         // GET: CheckOut
         public ActionResult Servicer1(string input1)

@@ -14,7 +14,7 @@ namespace Wedding.Controllers
     public class AcountController : Controller
     {
         // GET: Acount
-        WeddingEntity db = new WeddingEntity();
+        FlowersEntity db = new FlowersEntity();
         public ActionResult Login()
         {
             return View();

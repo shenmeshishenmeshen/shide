@@ -7,9 +7,9 @@ using Wedding.Models;
 
 namespace Wedding.Models
 {
-    public class SampleData : DropCreateDatabaseIfModelChanges<WeddingEntity>
+    public class SampleData : DropCreateDatabaseIfModelChanges<FlowersEntity>
     {
-        protected override void Seed(WeddingEntity context)
+        protected override void Seed(FlowersEntity context)
         {
             var User = new List<User>
             {

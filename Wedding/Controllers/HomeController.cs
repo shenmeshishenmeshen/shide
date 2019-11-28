@@ -23,7 +23,7 @@ namespace Wedding.Controllers
     {
         const String KEY = "f8abfbc6cf7244d195a3e8891bb04837";
 
-        WeddingEntity db = new WeddingEntity();
+        FlowersEntity db = new FlowersEntity();
         // GET: Home
         public ActionResult Index()
         {

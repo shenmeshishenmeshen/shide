@@ -11,7 +11,7 @@ namespace Wedding.Controllers
     public class OrderController : Controller
     {
         // GET: Order
-        WeddingEntity db = new WeddingEntity();
+        FlowersEntity db = new FlowersEntity();
         public ActionResult Index(string userName)
         {
             if (userName != null)

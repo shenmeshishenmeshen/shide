@@ -13,7 +13,7 @@ namespace Wedding.Controllers
 {
     public class ShangPing19manController : Controller
     {
-        WeddingEntity db = new WeddingEntity();
+        FlowersEntity db = new FlowersEntity();
         // GET: ShangPing19man
         //public ActionResult List(int id,int? page)
         //{

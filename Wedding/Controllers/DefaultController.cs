@@ -11,7 +11,7 @@ namespace Wedding.Controllers
     public class DefaultController : Controller
     {
         // GET: Default
-        WeddingEntity db = new WeddingEntity();
+        FlowersEntity db = new FlowersEntity();
         public ActionResult Index()
         {
             var movies = from m in db.User select m;

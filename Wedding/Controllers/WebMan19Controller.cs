@@ -11,7 +11,7 @@ namespace Wedding.Controllers
 {
     public class WebMan19Controller : Controller
     {
-        WeddingEntity db = new WeddingEntity();
+        FlowersEntity db = new FlowersEntity();
         // GET: WebMan19
         public ActionResult Index()
         {
